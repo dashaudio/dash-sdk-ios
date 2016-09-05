@@ -7,107 +7,107 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		377AE69B1D7DD0A500522AA7 /* Dash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377AE6911D7DD0A400522AA7 /* Dash.framework */; };
-		377AE6A01D7DD0A500522AA7 /* DashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377AE69F1D7DD0A500522AA7 /* DashTests.swift */; };
-		377AE6A21D7DD0A500522AA7 /* Dash.h in Headers */ = {isa = PBXBuildFile; fileRef = 377AE6941D7DD0A400522AA7 /* Dash.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		377AE70E1D7DD39500522AA7 /* Dash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377AE7041D7DD39500522AA7 /* Dash.framework */; };
+		377AE7131D7DD39500522AA7 /* DashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377AE7121D7DD39500522AA7 /* DashTests.swift */; };
+		377AE7151D7DD39500522AA7 /* Dash.h in Headers */ = {isa = PBXBuildFile; fileRef = 377AE7071D7DD39500522AA7 /* Dash.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		377AE69C1D7DD0A500522AA7 /* PBXContainerItemProxy */ = {
+		377AE70F1D7DD39500522AA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 377AE6881D7DD0A400522AA7 /* Project object */;
+			containerPortal = 377AE6FB1D7DD39500522AA7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 377AE6901D7DD0A400522AA7;
+			remoteGlobalIDString = 377AE7031D7DD39500522AA7;
 			remoteInfo = Dash;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		377AE6911D7DD0A400522AA7 /* Dash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		377AE6941D7DD0A400522AA7 /* Dash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Dash.h; path = ../Dash.h; sourceTree = "<group>"; };
-		377AE6951D7DD0A400522AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		377AE69A1D7DD0A500522AA7 /* DashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		377AE69F1D7DD0A500522AA7 /* DashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashTests.swift; path = ../../Tests/DashTests.swift; sourceTree = "<group>"; };
-		377AE6A11D7DD0A500522AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Tests/Info.plist; sourceTree = "<group>"; };
+		377AE7041D7DD39500522AA7 /* Dash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		377AE7071D7DD39500522AA7 /* Dash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Dash.h; path = Source/Dash.h; sourceTree = "<group>"; };
+		377AE7081D7DD39500522AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Source/Info.plist; sourceTree = "<group>"; };
+		377AE70D1D7DD39500522AA7 /* DashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		377AE7121D7DD39500522AA7 /* DashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashTests.swift; path = Tests/DashTests.swift; sourceTree = "<group>"; };
+		377AE7141D7DD39500522AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		377AE68D1D7DD0A400522AA7 /* Frameworks */ = {
+		377AE7001D7DD39500522AA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		377AE6971D7DD0A500522AA7 /* Frameworks */ = {
+		377AE70A1D7DD39500522AA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				377AE69B1D7DD0A500522AA7 /* Dash.framework in Frameworks */,
+				377AE70E1D7DD39500522AA7 /* Dash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		377AE6871D7DD0A400522AA7 = {
+		377AE6FA1D7DD39500522AA7 = {
 			isa = PBXGroup;
 			children = (
-				377AE6931D7DD0A400522AA7 /* Dash */,
-				377AE69E1D7DD0A500522AA7 /* DashTests */,
-				377AE6921D7DD0A400522AA7 /* Products */,
+				377AE7061D7DD39500522AA7 /* Dash */,
+				377AE7111D7DD39500522AA7 /* Tests */,
+				377AE7051D7DD39500522AA7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		377AE6921D7DD0A400522AA7 /* Products */ = {
+		377AE7051D7DD39500522AA7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				377AE6911D7DD0A400522AA7 /* Dash.framework */,
-				377AE69A1D7DD0A500522AA7 /* DashTests.xctest */,
+				377AE7041D7DD39500522AA7 /* Dash.framework */,
+				377AE70D1D7DD39500522AA7 /* DashTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		377AE6931D7DD0A400522AA7 /* Dash */ = {
+		377AE7061D7DD39500522AA7 /* Dash */ = {
 			isa = PBXGroup;
 			children = (
-				377AE6941D7DD0A400522AA7 /* Dash.h */,
-				377AE6951D7DD0A400522AA7 /* Info.plist */,
+				377AE7071D7DD39500522AA7 /* Dash.h */,
+				377AE7081D7DD39500522AA7 /* Info.plist */,
 			);
-			path = Dash;
+			name = Dash;
 			sourceTree = "<group>";
 		};
-		377AE69E1D7DD0A500522AA7 /* DashTests */ = {
+		377AE7111D7DD39500522AA7 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				377AE69F1D7DD0A500522AA7 /* DashTests.swift */,
-				377AE6A11D7DD0A500522AA7 /* Info.plist */,
+				377AE7121D7DD39500522AA7 /* DashTests.swift */,
+				377AE7141D7DD39500522AA7 /* Info.plist */,
 			);
-			path = DashTests;
+			name = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		377AE68E1D7DD0A400522AA7 /* Headers */ = {
+		377AE7011D7DD39500522AA7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				377AE6A21D7DD0A500522AA7 /* Dash.h in Headers */,
+				377AE7151D7DD39500522AA7 /* Dash.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		377AE6901D7DD0A400522AA7 /* Dash */ = {
+		377AE7031D7DD39500522AA7 /* Dash */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 377AE6A51D7DD0A500522AA7 /* Build configuration list for PBXNativeTarget "Dash" */;
+			buildConfigurationList = 377AE7181D7DD39500522AA7 /* Build configuration list for PBXNativeTarget "Dash" */;
 			buildPhases = (
-				377AE68C1D7DD0A400522AA7 /* Sources */,
-				377AE68D1D7DD0A400522AA7 /* Frameworks */,
-				377AE68E1D7DD0A400522AA7 /* Headers */,
-				377AE68F1D7DD0A400522AA7 /* Resources */,
+				377AE6FF1D7DD39500522AA7 /* Sources */,
+				377AE7001D7DD39500522AA7 /* Frameworks */,
+				377AE7011D7DD39500522AA7 /* Headers */,
+				377AE7021D7DD39500522AA7 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -115,76 +115,76 @@
 			);
 			name = Dash;
 			productName = Dash;
-			productReference = 377AE6911D7DD0A400522AA7 /* Dash.framework */;
+			productReference = 377AE7041D7DD39500522AA7 /* Dash.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		377AE6991D7DD0A500522AA7 /* DashTests */ = {
+		377AE70C1D7DD39500522AA7 /* DashTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 377AE6A81D7DD0A500522AA7 /* Build configuration list for PBXNativeTarget "DashTests" */;
+			buildConfigurationList = 377AE71B1D7DD39500522AA7 /* Build configuration list for PBXNativeTarget "DashTests" */;
 			buildPhases = (
-				377AE6961D7DD0A500522AA7 /* Sources */,
-				377AE6971D7DD0A500522AA7 /* Frameworks */,
-				377AE6981D7DD0A500522AA7 /* Resources */,
+				377AE7091D7DD39500522AA7 /* Sources */,
+				377AE70A1D7DD39500522AA7 /* Frameworks */,
+				377AE70B1D7DD39500522AA7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				377AE69D1D7DD0A500522AA7 /* PBXTargetDependency */,
+				377AE7101D7DD39500522AA7 /* PBXTargetDependency */,
 			);
 			name = DashTests;
 			productName = DashTests;
-			productReference = 377AE69A1D7DD0A500522AA7 /* DashTests.xctest */;
+			productReference = 377AE70D1D7DD39500522AA7 /* DashTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		377AE6881D7DD0A400522AA7 /* Project object */ = {
+		377AE6FB1D7DD39500522AA7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Dash;
 				TargetAttributes = {
-					377AE6901D7DD0A400522AA7 = {
+					377AE7031D7DD39500522AA7 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 44Z29AP4K7;
 						ProvisioningStyle = Automatic;
 					};
-					377AE6991D7DD0A500522AA7 = {
+					377AE70C1D7DD39500522AA7 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 44Z29AP4K7;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 377AE68B1D7DD0A400522AA7 /* Build configuration list for PBXProject "Dash" */;
+			buildConfigurationList = 377AE6FE1D7DD39500522AA7 /* Build configuration list for PBXProject "Dash" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 377AE6871D7DD0A400522AA7;
-			productRefGroup = 377AE6921D7DD0A400522AA7 /* Products */;
+			mainGroup = 377AE6FA1D7DD39500522AA7;
+			productRefGroup = 377AE7051D7DD39500522AA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				377AE6901D7DD0A400522AA7 /* Dash */,
-				377AE6991D7DD0A500522AA7 /* DashTests */,
+				377AE7031D7DD39500522AA7 /* Dash */,
+				377AE70C1D7DD39500522AA7 /* DashTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		377AE68F1D7DD0A400522AA7 /* Resources */ = {
+		377AE7021D7DD39500522AA7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		377AE6981D7DD0A500522AA7 /* Resources */ = {
+		377AE70B1D7DD39500522AA7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -194,33 +194,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		377AE68C1D7DD0A400522AA7 /* Sources */ = {
+		377AE6FF1D7DD39500522AA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		377AE6961D7DD0A500522AA7 /* Sources */ = {
+		377AE7091D7DD39500522AA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				377AE6A01D7DD0A500522AA7 /* DashTests.swift in Sources */,
+				377AE7131D7DD39500522AA7 /* DashTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		377AE69D1D7DD0A500522AA7 /* PBXTargetDependency */ = {
+		377AE7101D7DD39500522AA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 377AE6901D7DD0A400522AA7 /* Dash */;
-			targetProxy = 377AE69C1D7DD0A500522AA7 /* PBXContainerItemProxy */;
+			target = 377AE7031D7DD39500522AA7 /* Dash */;
+			targetProxy = 377AE70F1D7DD39500522AA7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		377AE6A31D7DD0A500522AA7 /* Debug */ = {
+		377AE7161D7DD39500522AA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -273,7 +273,7 @@
 			};
 			name = Debug;
 		};
-		377AE6A41D7DD0A500522AA7 /* Release */ = {
+		377AE7171D7DD39500522AA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -319,7 +319,7 @@
 			};
 			name = Release;
 		};
-		377AE6A61D7DD0A500522AA7 /* Debug */ = {
+		377AE7191D7DD39500522AA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
@@ -328,7 +328,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.dashaudio.Dash;
@@ -338,7 +338,7 @@
 			};
 			name = Debug;
 		};
-		377AE6A71D7DD0A500522AA7 /* Release */ = {
+		377AE71A1D7DD39500522AA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
@@ -347,7 +347,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.dashaudio.Dash;
@@ -357,11 +357,11 @@
 			};
 			name = Release;
 		};
-		377AE6A91D7DD0A500522AA7 /* Debug */ = {
+		377AE71C1D7DD39500522AA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 44Z29AP4K7;
-				INFOPLIST_FILE = ../Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.dashaudio.DashTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -369,11 +369,11 @@
 			};
 			name = Debug;
 		};
-		377AE6AA1D7DD0A500522AA7 /* Release */ = {
+		377AE71D1D7DD39500522AA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 44Z29AP4K7;
-				INFOPLIST_FILE = ../Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.dashaudio.DashTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -384,34 +384,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		377AE68B1D7DD0A400522AA7 /* Build configuration list for PBXProject "Dash" */ = {
+		377AE6FE1D7DD39500522AA7 /* Build configuration list for PBXProject "Dash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				377AE6A31D7DD0A500522AA7 /* Debug */,
-				377AE6A41D7DD0A500522AA7 /* Release */,
+				377AE7161D7DD39500522AA7 /* Debug */,
+				377AE7171D7DD39500522AA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		377AE6A51D7DD0A500522AA7 /* Build configuration list for PBXNativeTarget "Dash" */ = {
+		377AE7181D7DD39500522AA7 /* Build configuration list for PBXNativeTarget "Dash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				377AE6A61D7DD0A500522AA7 /* Debug */,
-				377AE6A71D7DD0A500522AA7 /* Release */,
+				377AE7191D7DD39500522AA7 /* Debug */,
+				377AE71A1D7DD39500522AA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		377AE6A81D7DD0A500522AA7 /* Build configuration list for PBXNativeTarget "DashTests" */ = {
+		377AE71B1D7DD39500522AA7 /* Build configuration list for PBXNativeTarget "DashTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				377AE6A91D7DD0A500522AA7 /* Debug */,
-				377AE6AA1D7DD0A500522AA7 /* Release */,
+				377AE71C1D7DD39500522AA7 /* Debug */,
+				377AE71D1D7DD39500522AA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 377AE6881D7DD0A400522AA7 /* Project object */;
+	rootObject = 377AE6FB1D7DD39500522AA7 /* Project object */;
 }
