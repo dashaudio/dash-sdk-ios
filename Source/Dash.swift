@@ -6,11 +6,8 @@ public class Dash {
 
     func show(viewController: UIViewController) {
         // TODO: Delegate to a presenter
-        var frame = viewController.view.bounds
-        frame.origin.y = frame.size.height - 50
-        frame.size.height = 50
-        let playerView = PlayerView(frame: frame)
-        playerView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
+        let playerView = PlayerView(frame: viewController.view.bounds)
+        playerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         playerView.delegate = self
         viewController.view.addSubview(playerView)
     }

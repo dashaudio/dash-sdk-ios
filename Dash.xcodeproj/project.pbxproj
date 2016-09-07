@@ -13,6 +13,7 @@
 		3718D6F11D7EC7D300DC0041 /* Articles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3718D6E71D7EC5B800DC0041 /* Articles.plist */; };
 		3718D6F31D7EC84300DC0041 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3718D6F21D7EC84300DC0041 /* Article.swift */; };
 		3718D6F51D7EF40600DC0041 /* Dash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3718D6F41D7EF40600DC0041 /* Dash.swift */; };
+		373F34DB1D80286600A4E9EA /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373F34DA1D80286600A4E9EA /* Icons.xcassets */; };
 		376737161D7F17FD003C26A8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376737151D7F17FD003C26A8 /* PlayerView.swift */; };
 		376737181D7F1829003C26A8 /* PlayerViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376737171D7F1829003C26A8 /* PlayerViewLayout.swift */; };
 		3767371A1D7F1A6B003C26A8 /* ArticleNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376737191D7F1A6B003C26A8 /* ArticleNavigationView.swift */; };
@@ -49,6 +50,7 @@
 		3718D6ED1D7EC64500DC0041 /* ArticleListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		3718D6F21D7EC84300DC0041 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		3718D6F41D7EF40600DC0041 /* Dash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dash.swift; sourceTree = "<group>"; };
+		373F34DA1D80286600A4E9EA /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		376737151D7F17FD003C26A8 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		376737171D7F1829003C26A8 /* PlayerViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewLayout.swift; sourceTree = "<group>"; };
 		376737191D7F1A6B003C26A8 /* ArticleNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleNavigationView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				377AE7071D7DD39500522AA7 /* Dash.h */,
 				377AE7081D7DD39500522AA7 /* Info.plist */,
+				373F34DA1D80286600A4E9EA /* Icons.xcassets */,
 				3718D6F41D7EF40600DC0041 /* Dash.swift */,
 				376737141D7F17E5003C26A8 /* Player */,
 			);
@@ -283,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373F34DB1D80286600A4E9EA /* Icons.xcassets in Resources */,
 				3718D6E81D7EC5B800DC0041 /* Articles.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
