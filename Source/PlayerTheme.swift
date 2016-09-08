@@ -16,46 +16,57 @@ public struct PlayerTheme {
     public var style: Style
     public var images: Images
 
-    public init(colors: Colors = .standard, alignment: Alignment = .standard, size: Size = .standard,
-         style: Style = .standard, images: Images = .standard) {
+    public init(colors: Colors = .standard, alignment: Alignment = .standard,
+                size: Size = .standard, style: Style = .standard, images: Images = .standard) {
+
         self.colors = colors
         self.alignment = alignment
         self.size = size
         self.style = style
         self.images = images
+
     }
 
     public struct Colors {
+
         public var foreground: UIColor
         public var background: UIColor
 
-        public static let standard = Colors(foreground: .blue, background: .white)
-        public static let grayscale = Colors(foreground: .gray, background: .white)
+        public static let standard = Colors(foreground: .black, background: .lightGray)
+        public static let grayscale = Colors(foreground: .gray, background: .lightGray)
+
     }
 
     public struct Alignment {
+
         public var horizontal: CGRectEdge
         public var vertical: CGRectEdge
 
         public static let standard = Alignment(horizontal: .minXEdge, vertical: .maxYEdge)
+
     }
 
     public enum Size: CGFloat {
+
         case small = 30
         case medium = 50
         case large = 80
 
         public static let standard = Size.medium
+
     }
 
     public struct Style {
+
         public var rounding: CGFloat
         public var padding: CGFloat
 
         public static let standard = Style(rounding: 80, padding: 10)
+
     }
 
     public struct Images {
+
         public var play: UIImage
         public var pause: UIImage
 
@@ -64,6 +75,7 @@ public struct PlayerTheme {
             let play = UIImage(named: "play", in: frameworkBundle, compatibleWith: nil)!
             return Images(play: play, pause: play)
         }()
+
     }
 
 }

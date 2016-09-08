@@ -10,7 +10,6 @@
 		3718D6E81D7EC5B800DC0041 /* Articles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3718D6E71D7EC5B800DC0041 /* Articles.plist */; };
 		3718D6F11D7EC7D300DC0041 /* Articles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3718D6E71D7EC5B800DC0041 /* Articles.plist */; };
 		3718D6F51D7EF40600DC0041 /* Dash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3718D6F41D7EF40600DC0041 /* Dash.swift */; };
-		373F34DB1D80286600A4E9EA /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373F34DA1D80286600A4E9EA /* Icons.xcassets */; };
 		376737161D7F17FD003C26A8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376737151D7F17FD003C26A8 /* PlayerView.swift */; };
 		376737181D7F1829003C26A8 /* PlayerViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376737171D7F1829003C26A8 /* PlayerViewLayout.swift */; };
 		377AE70E1D7DD39500522AA7 /* Dash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377AE7041D7DD39500522AA7 /* Dash.framework */; };
@@ -26,6 +25,8 @@
 		37BF46521D8180C900AE35DD /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3718D6EB1D7EC62F00DC0041 /* ArticleDetailView.swift */; };
 		37BF46531D8180CC00AE35DD /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3718D6ED1D7EC64500DC0041 /* ArticleListView.swift */; };
 		37BF46541D8180D000AE35DD /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3718D6F21D7EC84300DC0041 /* Article.swift */; };
+		37BF46561D81C14A00AE35DD /* PlayerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BF46551D81C14A00AE35DD /* PlayerBackgroundView.swift */; };
+		37BF46581D81C62600AE35DD /* play.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 37BF46571D81C62600AE35DD /* play.pdf */; };
 		37FFA1AD1D7EB82B0076B082 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FFA1AC1D7EB82B0076B082 /* AppDelegate.swift */; };
 		37FFA1B21D7EB82B0076B082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FFA1B01D7EB82B0076B082 /* Main.storyboard */; };
 		37FFA1B41D7EB82B0076B082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37FFA1B31D7EB82B0076B082 /* Assets.xcassets */; };
@@ -56,7 +57,6 @@
 		3718D6ED1D7EC64500DC0041 /* ArticleListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		3718D6F21D7EC84300DC0041 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		3718D6F41D7EF40600DC0041 /* Dash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dash.swift; sourceTree = "<group>"; };
-		373F34DA1D80286600A4E9EA /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		376737151D7F17FD003C26A8 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		376737171D7F1829003C26A8 /* PlayerViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewLayout.swift; sourceTree = "<group>"; };
 		377AE7041D7DD39500522AA7 /* Dash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +73,8 @@
 		37BF46451D816A6400AE35DD /* PlayerThemeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerThemeTests.swift; sourceTree = "<group>"; };
 		37BF46471D81713C00AE35DD /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		37BF464D1D817D2700AE35DD /* OptionsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsListView.swift; sourceTree = "<group>"; };
+		37BF46551D81C14A00AE35DD /* PlayerBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerBackgroundView.swift; sourceTree = "<group>"; };
+		37BF46571D81C62600AE35DD /* play.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = play.pdf; sourceTree = "<group>"; };
 		37FFA1AA1D7EB82B0076B082 /* DashExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DashExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FFA1AC1D7EB82B0076B082 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37FFA1B11D7EB82B0076B082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,7 +148,7 @@
 				37BF46441D81671800AE35DD /* README.md */,
 				377AE7071D7DD39500522AA7 /* Dash.h */,
 				377AE7081D7DD39500522AA7 /* Info.plist */,
-				373F34DA1D80286600A4E9EA /* Icons.xcassets */,
+				37BF46571D81C62600AE35DD /* play.pdf */,
 				3718D6F41D7EF40600DC0041 /* Dash.swift */,
 				376737141D7F17E5003C26A8 /* Player */,
 				37BF464A1D8175EC00AE35DD /* Analytics */,
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				376737151D7F17FD003C26A8 /* PlayerView.swift */,
+				37BF46551D81C14A00AE35DD /* PlayerBackgroundView.swift */,
 				376737171D7F1829003C26A8 /* PlayerViewLayout.swift */,
 			);
 			name = View;
@@ -346,8 +349,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				373F34DB1D80286600A4E9EA /* Icons.xcassets in Resources */,
 				3718D6E81D7EC5B800DC0041 /* Articles.plist in Resources */,
+				37BF46581D81C62600AE35DD /* play.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +381,7 @@
 			files = (
 				37BF46411D81542A00AE35DD /* PlayerState.swift in Sources */,
 				37BF46481D81713C00AE35DD /* Analytics.swift in Sources */,
+				37BF46561D81C14A00AE35DD /* PlayerBackgroundView.swift in Sources */,
 				3718D6F51D7EF40600DC0041 /* Dash.swift in Sources */,
 				37BF46431D81545A00AE35DD /* PlayerTheme.swift in Sources */,
 				376737161D7F17FD003C26A8 /* PlayerView.swift in Sources */,
