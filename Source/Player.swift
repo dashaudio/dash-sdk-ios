@@ -6,10 +6,19 @@
 //  Copyright © 2016 Dash. All rights reserved.
 //
 
+public protocol PlayerDelegate: class {
+
+    func themeDidChange(theme: PlayerTheme)
+    func stateDidChange(state: PlayerState)
+
+}
+
 public class Player {
 
     private let view: PlayerView
     private let engine: PlayerEngine
+
+    public weak var delegate: PlayerDelegate? // TODO
 
     public var theme: PlayerTheme {
         didSet { self.view.updateTheme(theme: self.theme) }
