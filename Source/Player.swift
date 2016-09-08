@@ -10,11 +10,20 @@ public class Player {
 
     private let view: PlayerView
     private let engine: PlayerEngine
-    private var state: PlayerState
 
-    init(engine: PlayerEngine = PlayerEngine(), view: PlayerView = PlayerView(), state: PlayerState = PlayerState()) {
+    public var theme: PlayerTheme {
+        didSet { self.view.updateTheme(theme: self.theme) }
+    }
+
+    public var state: PlayerState {
+        didSet { self.view.updateState(state: self.state) }
+    }
+
+    init(engine: PlayerEngine = PlayerEngine(), view: PlayerView = PlayerView(),
+         theme: PlayerTheme = PlayerTheme(), state: PlayerState = PlayerState()) {
         self.engine = engine
         self.view = view
+        self.theme = theme
         self.state = state
         self.engine.delegate = self
         self.view.delegate = self
@@ -26,10 +35,6 @@ public class Player {
         self.view.frame = view.bounds
         self.view.layer.zPosition = CGFloat.greatestFiniteMagnitude // TODO: Some consideration here
         view.addSubview(self.view)
-    }
-
-    public func updateTheme(theme: PlayerTheme) {
-        self.view.updateTheme(theme: theme)
     }
 
     public func play() {

@@ -153,6 +153,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="horizontalPositionSelector" destination="HXv-Tr-X48" id="ZQG-I8-RGg"/>
+                        <outlet property="verticalPositionSelector" destination="hC4-JW-k3K" id="ogC-du-xSu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDh-km-p3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

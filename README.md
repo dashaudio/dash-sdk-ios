@@ -25,3 +25,5 @@ Dash provides a smart audio player which turns your app's written content into p
     let customImages = PlayerTheme(images: .init(play: UIImage(named:"play")!, pause: UIImage(named: "pause")!))
 
     let customTheme = PlayerTheme(colours: .grayscale, size: .large, style: .init(rounding: 10, padding: 10))
+
+    Dash.sharedPlayer.theme = customTheme

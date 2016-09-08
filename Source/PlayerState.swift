@@ -6,9 +6,9 @@
 //  Copyright © 2016 Dash. All rights reserved.
 //
 
-struct PlayerState {
-    var visible: Bool = true
-    var maximised: Bool = false
-    var playing: Bool = false
-    var position: Double = 0
+public struct PlayerState {
+    public var visible: Bool = true
+    public var maximised: Bool = false
+    public var playing: Bool = false
+    public var position: Double = 0
 }

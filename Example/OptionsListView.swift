@@ -11,31 +11,32 @@ import Dash
 
 class OptionsListView: UIViewController {
 
-    var theme = PlayerTheme()
+    @IBOutlet weak var verticalPositionSelector: UISegmentedControl!
+    @IBOutlet weak var horizontalPositionSelector: UISegmentedControl!
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         Dash.sharedPlayer.present(over: self.navigationController?.view ?? self.view)
+        self.verticalPositionSelector.selectedSegmentIndex
+            = Dash.sharedPlayer.theme.alignment.vertical == .minYEdge ? 0 : 1
+        self.horizontalPositionSelector.selectedSegmentIndex
+            = Dash.sharedPlayer.theme.alignment.horizontal == .minXEdge ? 0 : 1
     }
 
     @IBAction func verticalPositionSelectorWasPressed(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-        case 0: self.theme.alignment.vertical = .minYEdge
-        case 1: self.theme.alignment.vertical = .maxYEdge
+        case 0: Dash.sharedPlayer.theme.alignment.vertical = .minYEdge
+        case 1: Dash.sharedPlayer.theme.alignment.vertical = .maxYEdge
         default: break
         }
-
-        Dash.sharedPlayer.updateTheme(theme: self.theme)
     }
 
     @IBAction func horizontalPositionSelectorWasPressed(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-        case 0: self.theme.alignment.horizontal = .minXEdge
-        case 1: self.theme.alignment.horizontal = .maxXEdge
+        case 0: Dash.sharedPlayer.theme.alignment.horizontal = .minXEdge
+        case 1: Dash.sharedPlayer.theme.alignment.horizontal = .maxXEdge
         default: break
         }
-
-        Dash.sharedPlayer.updateTheme(theme: self.theme)
     }
 
     @IBAction func doneButtonWasPressed() {
