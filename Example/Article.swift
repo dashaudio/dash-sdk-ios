@@ -6,6 +6,8 @@
 //  Copyright © 2016 Dash. All rights reserved.
 //
 
+import Foundation
+
 struct Article {
     let title: String
     let body: String

@@ -13,26 +13,30 @@ protocol PlayerViewDelegate: class {
     func playButtonWasPressed()
     func pauseButtonWasPressed()
 
+    func maximiseToggleWasPressed()
+
 }
 
 @objc class PlayerView: UIView {
 
     weak var delegate: PlayerViewDelegate?
-    var maximised = true
 
-    // DI state and theme here.
+    var theme = PlayerTheme()
+    var state = PlayerState()
 
     let playButton: UIButton = {
         let button = UIButton()
         button.accessibilityLabel = "Play"
         button.backgroundColor = UIColor.red.withAlphaComponent(0.5)
+        button.imageView?.tintColor = UIColor.white
         return button
     }()
 
     let pauseButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: UIButtonType.custom)
         button.titleLabel?.text = "Pause"
         button.backgroundColor = UIColor.red.withAlphaComponent(0.5)
+        button.imageView?.tintColor = UIColor.white
         return button
     }()
 
@@ -48,11 +52,10 @@ protocol PlayerViewDelegate: class {
 
     func pauseButtonWasTapped() {
         self.delegate?.pauseButtonWasPressed()
+    }
 
-        UIView.animate(withDuration: 0.35) {
-            self.maximised = !self.maximised
-            self.layoutSubviews()
-        }
+    func maximiseToggleWasPressed() {
+        self.delegate?.maximiseToggleWasPressed()
     }
 
     convenience init() {
@@ -66,6 +69,9 @@ protocol PlayerViewDelegate: class {
         self.addSubview(self.pauseButton)
         self.playButton.addTarget(self, action: #selector(playButtonWasTapped), for: .touchUpInside)
         self.pauseButton.addTarget(self, action: #selector(pauseButtonWasTapped), for: .touchUpInside)
+        self.pauseButton.addTarget(self, action: #selector(maximiseToggleWasPressed), for: .touchUpInside)
+        self.playButton.imageView?.image = self.theme.images.play
+        self.pauseButton.imageView?.image = self.theme.images.pause
         self.backgroundView.isUserInteractionEnabled = false
     }
 
@@ -73,16 +79,35 @@ protocol PlayerViewDelegate: class {
         fatalError("Not supported")
     }
 
+    func updateTheme(theme: PlayerTheme) {
+        UIView.animate(withDuration: 0.25) {
+            self.theme = theme
+            self.layoutSubviews()
+        }
+    }
+
+    func updateState(state: PlayerState) {
+        UIView.animate(withDuration: 0.25) {
+            self.state = state
+            self.layoutSubviews()
+        }
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        let layout = PlayerViewLayout(bounds: self.bounds, alignment: .standard, maximised: self.maximised)
-        self.playButton.frame = layout.playButtonBounds()
-        self.pauseButton.frame = layout.pauseButtonBounds()
+        let layout = PlayerViewLayout(theme: self.theme, state: self.state, bounds: self.bounds)
+        self.playButton.frame = layout.playButtonFrame()
+        self.pauseButton.frame = layout.pauseButtonFrame()
         self.backgroundView.frame = layout.backgroundViewFrame()
 
-        let style = PlayerViewStyle.standard
-        self.backgroundView.layer.cornerRadius = min(style.rounding, self.backgroundView.bounds.size.height / 2)
+        let rounding = self.theme.style.rounding
+        let maxRounding = self.backgroundView.bounds.size.height / 2
+        self.backgroundView.layer.cornerRadius = min(rounding, maxRounding)
+
+        self.playButton.backgroundColor = self.theme.colors.foreground
+        self.pauseButton.backgroundColor = self.theme.colors.foreground
+        self.backgroundView.backgroundColor = self.theme.colors.background
     }
 
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {

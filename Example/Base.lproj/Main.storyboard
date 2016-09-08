@@ -3,13 +3,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Articles-->
+        <!--Dash SDK-->
         <scene sceneID="9lB-Hh-1eg">
             <objects>
-                <tableViewController id="abn-q8-oUJ" customClass="ArticleListView" customModule="Dash" sceneMemberID="viewController">
+                <tableViewController id="abn-q8-oUJ" customClass="ArticleListView" customModule="DashExample" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="JDI-hI-KAL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,11 +21,11 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Zv-1l-mxf" id="eEl-A6-ygr">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zxg-OH-i2w">
-                                            <frame key="frameInset" minX="15" width="345" height="43.5"/>
+                                            <frame key="frameInset" minX="15" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -38,7 +40,13 @@
                             <outlet property="delegate" destination="abn-q8-oUJ" id="r0O-gn-lhm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Articles" id="cc7-Ni-9uh"/>
+                    <navigationItem key="navigationItem" title="Dash SDK" id="cc7-Ni-9uh">
+                        <barButtonItem key="rightBarButtonItem" title="Options" id="Oo9-EO-rPk">
+                            <connections>
+                                <segue destination="uzM-f8-l6X" kind="presentation" id="1Vi-zk-5L0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="GLm-OR-PdC" kind="show" identifier="showArticleDetail" id="ZFW-Zw-8vQ"/>
                     </connections>
@@ -47,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="-484" y="-361"/>
         </scene>
-        <!--Article Navigation View-->
+        <!--Navigation Controller-->
         <scene sceneID="la3-1a-JbU">
             <objects>
-                <navigationController id="1ut-Uz-Plc" customClass="ArticleNavigationView" customModule="Dash" sceneMemberID="viewController">
+                <navigationController id="1ut-Uz-Plc" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uf2-IG-RPJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -63,10 +71,97 @@
             </objects>
             <point key="canvasLocation" x="-1226" y="-361"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mRC-pe-Eej">
+            <objects>
+                <navigationController id="uzM-f8-l6X" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YDQ-ln-bSS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6tw-vo-L0L" kind="relationship" relationship="rootViewController" id="jyt-CX-fTE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bch-Z0-sNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-474" y="331"/>
+        </scene>
+        <!--Options-->
+        <scene sceneID="B4B-kg-o5q">
+            <objects>
+                <viewController id="6tw-vo-L0L" customClass="OptionsListView" customModule="DashExample" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="grv-2C-1gU"/>
+                        <viewControllerLayoutGuide type="bottom" id="ywn-j6-Jwd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="niE-Os-yrV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="hC4-JW-k3K">
+                                <segments>
+                                    <segment title="Top"/>
+                                    <segment title="Bottom"/>
+                                </segments>
+                                <connections>
+                                    <action selector="verticalPositionSelectorWasPressedWithSender:" destination="6tw-vo-L0L" eventType="valueChanged" id="DF8-st-Zbf"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vertical Position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaf-LW-56G">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horizontal Position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fm-YU-42p">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HXv-Tr-X48">
+                                <segments>
+                                    <segment title="Left"/>
+                                    <segment title="Right"/>
+                                </segments>
+                                <connections>
+                                    <action selector="horizontalPositionSelectorWasPressedWithSender:" destination="6tw-vo-L0L" eventType="valueChanged" id="Rnu-wq-O5J"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HXv-Tr-X48" firstAttribute="width" secondItem="niE-Os-yrV" secondAttribute="width" multiplier="0.5" id="0zY-Dx-0MY"/>
+                            <constraint firstItem="0Fm-YU-42p" firstAttribute="top" secondItem="hC4-JW-k3K" secondAttribute="bottom" constant="8" id="3bu-UW-5Aq"/>
+                            <constraint firstItem="0Fm-YU-42p" firstAttribute="top" secondItem="hC4-JW-k3K" secondAttribute="bottom" constant="8" id="E18-jK-Ye1"/>
+                            <constraint firstItem="HXv-Tr-X48" firstAttribute="leading" secondItem="niE-Os-yrV" secondAttribute="leadingMargin" id="HG4-lv-zbz"/>
+                            <constraint firstItem="aaf-LW-56G" firstAttribute="top" secondItem="grv-2C-1gU" secondAttribute="bottom" constant="8" id="LDd-dY-Vxf"/>
+                            <constraint firstItem="0Fm-YU-42p" firstAttribute="leading" secondItem="niE-Os-yrV" secondAttribute="leadingMargin" id="XxE-7q-1oh"/>
+                            <constraint firstItem="hC4-JW-k3K" firstAttribute="top" secondItem="aaf-LW-56G" secondAttribute="bottom" constant="8" id="aY2-RK-DdV"/>
+                            <constraint firstItem="HXv-Tr-X48" firstAttribute="top" secondItem="0Fm-YU-42p" secondAttribute="bottom" constant="8" id="bYu-Hx-PuO"/>
+                            <constraint firstItem="0Fm-YU-42p" firstAttribute="trailing" secondItem="niE-Os-yrV" secondAttribute="trailingMargin" id="ctk-KN-Qls"/>
+                            <constraint firstItem="hC4-JW-k3K" firstAttribute="leading" secondItem="niE-Os-yrV" secondAttribute="leadingMargin" id="gFA-eS-Slu"/>
+                            <constraint firstItem="aaf-LW-56G" firstAttribute="leading" secondItem="niE-Os-yrV" secondAttribute="leadingMargin" id="iaz-Tc-YZs"/>
+                            <constraint firstItem="HXv-Tr-X48" firstAttribute="top" secondItem="0Fm-YU-42p" secondAttribute="bottom" constant="8" id="res-TM-GVr"/>
+                            <constraint firstItem="hC4-JW-k3K" firstAttribute="width" secondItem="niE-Os-yrV" secondAttribute="width" multiplier="0.5" id="vrF-e3-fQF"/>
+                            <constraint firstItem="aaf-LW-56G" firstAttribute="trailing" secondItem="niE-Os-yrV" secondAttribute="trailingMargin" id="zCO-Ua-ixG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Options" id="JJa-Ly-g5v">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="FiT-AK-dgc">
+                            <connections>
+                                <action selector="doneButtonWasPressed" destination="6tw-vo-L0L" id="S0g-nl-UUa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDh-km-p3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237.59999999999999" y="330.58470764617692"/>
+        </scene>
         <!--Read-->
         <scene sceneID="dnf-Ue-RTL">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="GLm-OR-PdC" customClass="ArticleDetailView" customModule="Dash" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="GLm-OR-PdC" customClass="ArticleDetailView" customModule="DashExample" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kH2-OO-Uyv"/>
                         <viewControllerLayoutGuide type="bottom" id="0wZ-KC-WOi"/>
