@@ -46,7 +46,7 @@ public class Player {
 
         self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.frame = view.bounds
-        self.view.layer.zPosition = CGFloat.greatestFiniteMagnitude // TODO: Some consideration here
+        self.view.layer.zPosition = CGFloat(FLT_MAX) // TODO: Some consideration here
 
         view.addSubview(self.view)
 

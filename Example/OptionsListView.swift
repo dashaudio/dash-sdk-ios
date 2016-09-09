@@ -54,7 +54,7 @@ class OptionsListView: UITableViewController {
         self.styleRoundingStepper.value = Double(theme.style.rounding)
         self.stylePaddingStepper.value = Double(theme.style.padding)
 
-        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: theme.size.rawValue, right: 0)
+        self.tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: theme.size.rawValue, right: 0)
 
     }
 

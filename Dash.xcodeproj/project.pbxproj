@@ -180,8 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				376737151D7F17FD003C26A8 /* PlayerView.swift */,
-				37BF46551D81C14A00AE35DD /* PlayerBackgroundView.swift */,
 				376737171D7F1829003C26A8 /* PlayerViewLayout.swift */,
+				37BF46551D81C14A00AE35DD /* PlayerBackgroundView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";

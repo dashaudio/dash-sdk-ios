@@ -40,10 +40,7 @@ protocol PlayerViewDelegate: class {
 
     }()
 
-    let backgroundView: PlayerBackgroundView = {
-        let view = PlayerBackgroundView()
-        return view
-    }()
+    let backgroundView = PlayerBackgroundView()
 
     func playButtonWasTapped() {
         self.delegate?.playButtonWasPressed()
