@@ -28,6 +28,8 @@ protocol PlayerViewDelegate: class {
     let playButton = UIButton()
     let pauseButton = UIButton()
     let titleLabel = UILabel()
+    let titleLabelContainer = UIView()
+    let positionProgressView = UIProgressView()
     let backgroundView = PlayerBackgroundView()
 
     func toggleButtonWasPressed() {
@@ -53,7 +55,9 @@ protocol PlayerViewDelegate: class {
         self.addSubview(self.backgroundView)
         self.addSubview(self.playButton)
         self.addSubview(self.pauseButton)
-        self.addSubview(self.titleLabel)
+        self.addSubview(self.titleLabelContainer)
+        self.titleLabelContainer.addSubview(self.titleLabel)
+        self.addSubview(self.positionProgressView)
         self.addSubview(self.toggleButton)
 
         self.toggleButton.addTarget(self, action: #selector(toggleButtonWasPressed), for: .touchUpInside)
@@ -61,7 +65,8 @@ protocol PlayerViewDelegate: class {
         self.pauseButton.addTarget(self, action: #selector(pauseButtonWasTapped), for: .touchUpInside)
 
         self.backgroundView.isUserInteractionEnabled = false
-        self.titleLabel.contentMode = .scaleToFill
+        self.titleLabel.contentMode = .left
+        self.titleLabel.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
     }
 
@@ -71,7 +76,7 @@ protocol PlayerViewDelegate: class {
 
     func updateTheme(theme: PlayerTheme) {
 
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.4) {
             self.theme = theme
             self.layoutSubviews()
         }
@@ -80,7 +85,7 @@ protocol PlayerViewDelegate: class {
 
     func updateState(state: PlayerState) {
 
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.4) {
             self.state = state
             self.layoutSubviews()
         }
@@ -112,10 +117,17 @@ protocol PlayerViewDelegate: class {
 
         self.backgroundView.backgroundColor = self.theme.colors.background
 
-        self.titleLabel.text = "The podcast track title"
-        self.titleLabel.frame = layout.titleLabelFrame()
+        self.titleLabel.text = self.state.title
+        self.titleLabelContainer.frame = layout.titleLabelFrame()
         self.titleLabel.textColor = self.theme.colors.foreground
-        self.titleLabel.font = UIFont.systemFont(ofSize: layout.titleLabelFontSize())
+        self.titleLabel.font = UIFont.boldSystemFont(ofSize: layout.titleLabelFontSize())
+        self.titleLabel.alpha = layout.titleLabelAlpha()
+
+        self.positionProgressView.frame = layout.positionProgressViewFrame()
+        self.positionProgressView.progress = 0.5
+        self.positionProgressView.trackTintColor = self.theme.colors.background
+        self.positionProgressView.progressTintColor = self.theme.colors.foreground
+        self.positionProgressView.alpha = layout.positionProgressViewAlpha()
 
     }
 

@@ -67,7 +67,7 @@ public struct PlayerTheme {
         public var rounding: CGFloat
         public var padding: CGFloat
 
-        public static let standard = Style(rounding: 5, padding: 5)
+        public static let standard = Style(rounding: 25, padding: 5)
 
     }
 

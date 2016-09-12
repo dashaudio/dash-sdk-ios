@@ -17,6 +17,7 @@ class ArticleListView: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Dash.sharedPlayer.present(over: self.navigationController?.view ?? self.view)
+        Dash.sharedPlayer.minimise()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,8 +39,11 @@ class ArticleListView: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedArticle = self.articles[indexPath.row]
+        let article = self.articles[indexPath.row]
+        self.selectedArticle = article
         self.performSegue(withIdentifier: "showArticleDetail", sender: self)
+        Dash.sharedPlayer.load(title: article.title)
+        Dash.sharedPlayer.maximise()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

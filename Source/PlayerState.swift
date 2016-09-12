@@ -12,5 +12,6 @@ public struct PlayerState {
     public var maximised: Bool = false
     public var playing: Bool = false
     public var position: Double = 0
+    public var title: String = "Not playing"
 
 }

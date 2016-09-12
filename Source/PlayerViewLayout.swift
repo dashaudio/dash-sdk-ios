@@ -71,7 +71,19 @@ struct PlayerViewLayout {
     }
 
     func centralFrame() -> CGRect {
-        return self.workingFrame().insetBy(dx: self.theme.size.rawValue - self.theme.style.padding, dy: self.theme.style.padding)
+
+        var frame = self.workingFrame()
+
+        let dx = self.theme.size.rawValue - self.theme.style.padding
+        frame.origin.x += dx
+        frame.size.width -= dx * 2
+
+        let dy = self.theme.style.padding
+        frame.origin.y += dy
+        frame.size.height -= dy * 2
+
+        return frame
+
     }
 
     func primaryButtonFrame() -> CGRect {
@@ -113,11 +125,37 @@ struct PlayerViewLayout {
     }
 
     func titleLabelFrame() -> CGRect {
-        return self.centralFrame()
+
+        var frame = self.centralFrame()
+
+        frame.origin.y += self.theme.size.rawValue * (0.2 - 0.05)
+        frame.size.height -= self.theme.size.rawValue * 0.2 * 2.5
+
+        return frame
+
     }
 
     func titleLabelFontSize() -> CGFloat {
-        return (self.theme.size.rawValue / 2) - 5
+        return self.titleLabelFrame().size.height * 0.8
+    }
+
+    func titleLabelAlpha() -> CGFloat {
+        return self.state.maximised ? 1 : 0
+    }
+
+    func positionProgressViewFrame() -> CGRect {
+
+        var frame = self.centralFrame()
+
+        frame.origin.y += (self.theme.size.rawValue * 0.8) - (self.theme.style.padding * 2) - 2
+        frame.size.height = 2
+
+        return frame
+
+    }
+
+    func positionProgressViewAlpha() -> CGFloat {
+        return self.state.maximised ? 1 : 0
     }
 
 }

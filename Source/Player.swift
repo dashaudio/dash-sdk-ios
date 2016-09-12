@@ -92,7 +92,12 @@ public class Player {
 
     }
 
-    // set text/url data
+    public func load(title: String) {
+
+        self.state.title = title
+        self.view.updateState(state: state)
+        
+    }
 
 }
 
