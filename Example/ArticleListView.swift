@@ -14,8 +14,8 @@ class ArticleListView: UITableViewController {
     private let articles = Article.all()
     private var selectedArticle: Article? = nil
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         Dash.sharedPlayer.present(over: self.navigationController?.view ?? self.view)
     }
 

@@ -27,6 +27,9 @@ class OptionsListView: UITableViewController {
     @IBOutlet weak var styleRoundingStepper: UIStepper!
     @IBOutlet weak var stylePaddingStepper: UIStepper!
 
+    @IBOutlet weak var styleRoundingLabel: UILabel!
+    @IBOutlet weak var stylePaddingLabel: UILabel!
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Dash.sharedPlayer.present(over: self.navigationController?.view ?? self.view)
@@ -53,6 +56,9 @@ class OptionsListView: UITableViewController {
 
         self.styleRoundingStepper.value = Double(theme.style.rounding)
         self.stylePaddingStepper.value = Double(theme.style.padding)
+
+        self.styleRoundingLabel.text = "\(Int(theme.style.rounding))pt"
+        self.stylePaddingLabel.text = "\(Int(theme.style.padding))pt"
 
         self.tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: theme.size.rawValue, right: 0)
 

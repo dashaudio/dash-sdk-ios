@@ -32,8 +32,14 @@ public struct PlayerTheme {
         public var foreground: UIColor
         public var background: UIColor
 
-        public static let standard = Colors(foreground: .black, background: .lightGray)
-        public static let grayscale = Colors(foreground: .gray, background: .lightGray)
+        public static let standard: Colors = {
+
+            let whiteColor = UIColor.white
+            let tintColor = UIView().tintColor!
+
+            return Colors(foreground: whiteColor, background: tintColor)
+
+        }()
 
     }
 
@@ -48,9 +54,9 @@ public struct PlayerTheme {
 
     public enum Size: CGFloat {
 
-        case small = 30
+        case small = 40
         case medium = 50
-        case large = 80
+        case large = 60
 
         public static let standard = Size.medium
 
@@ -61,19 +67,26 @@ public struct PlayerTheme {
         public var rounding: CGFloat
         public var padding: CGFloat
 
-        public static let standard = Style(rounding: 80, padding: 10)
+        public static let standard = Style(rounding: 5, padding: 5)
 
     }
 
     public struct Images {
 
+        public var toggle: UIImage
         public var play: UIImage
         public var pause: UIImage
 
         public static let standard: Images = {
-            let frameworkBundle = Bundle(for: Dash.self)
-            let play = UIImage(named: "play", in: frameworkBundle, compatibleWith: nil)!
-            return Images(play: play, pause: play)
+
+            let bundle = Bundle(for: Player.self)
+
+            let toggle = UIImage(named: "toggle", in: bundle, compatibleWith: nil)!
+            let play = UIImage(named: "play", in: bundle, compatibleWith: nil)!
+            let pause = UIImage(named: "pause", in: bundle, compatibleWith: nil)!
+
+            return Images(toggle: toggle, play: play, pause: pause)
+
         }()
 
     }

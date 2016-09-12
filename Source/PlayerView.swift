@@ -13,7 +13,7 @@ protocol PlayerViewDelegate: class {
     func playButtonWasPressed()
     func pauseButtonWasPressed()
 
-    func maximiseToggleWasPressed()
+    func toggleButtonWasPressed()
 
 }
 
@@ -24,23 +24,15 @@ protocol PlayerViewDelegate: class {
     var theme = PlayerTheme()
     var state = PlayerState()
 
-    let playButton: UIButton = {
-
-        let button = UIButton()
-        button.accessibilityLabel = "Play"
-        return button
-
-    }()
-
-    let pauseButton: UIButton = {
-
-        let button = UIButton(type: UIButtonType.custom)
-        button.titleLabel?.text = "Pause"
-        return button
-
-    }()
-
+    let toggleButton = UIButton()
+    let playButton = UIButton()
+    let pauseButton = UIButton()
+    let titleLabel = UILabel()
     let backgroundView = PlayerBackgroundView()
+
+    func toggleButtonWasPressed() {
+        self.delegate?.toggleButtonWasPressed()
+    }
 
     func playButtonWasTapped() {
         self.delegate?.playButtonWasPressed()
@@ -48,10 +40,6 @@ protocol PlayerViewDelegate: class {
 
     func pauseButtonWasTapped() {
         self.delegate?.pauseButtonWasPressed()
-    }
-
-    func maximiseToggleWasPressed() {
-        self.delegate?.maximiseToggleWasPressed()
     }
 
     convenience init() {
@@ -65,14 +53,15 @@ protocol PlayerViewDelegate: class {
         self.addSubview(self.backgroundView)
         self.addSubview(self.playButton)
         self.addSubview(self.pauseButton)
+        self.addSubview(self.titleLabel)
+        self.addSubview(self.toggleButton)
 
+        self.toggleButton.addTarget(self, action: #selector(toggleButtonWasPressed), for: .touchUpInside)
         self.playButton.addTarget(self, action: #selector(playButtonWasTapped), for: .touchUpInside)
         self.pauseButton.addTarget(self, action: #selector(pauseButtonWasTapped), for: .touchUpInside)
-        self.pauseButton.addTarget(self, action: #selector(maximiseToggleWasPressed), for: .touchUpInside)
 
-        self.playButton.imageView?.image = self.theme.images.play
-        self.pauseButton.imageView?.image = self.theme.images.pause
         self.backgroundView.isUserInteractionEnabled = false
+        self.titleLabel.contentMode = .scaleToFill
 
     }
 
@@ -103,24 +92,35 @@ protocol PlayerViewDelegate: class {
         super.layoutSubviews()
 
         let layout = PlayerViewLayout(theme: self.theme, state: self.state, bounds: self.bounds)
+
+        self.toggleButton.frame = layout.toggleButtonFrame()
         self.playButton.frame = layout.playButtonFrame()
         self.pauseButton.frame = layout.pauseButtonFrame()
         self.backgroundView.frame = layout.backgroundViewFrame()
         self.backgroundView.layer.cornerRadius = layout.backgroundViewRounding()
 
+        self.toggleButton.tintColor = self.theme.colors.foreground
+        self.toggleButton.setBackgroundImage(self.theme.images.toggle, for: .normal)
 
+        self.playButton.tintColor = self.theme.colors.foreground
+        self.playButton.setBackgroundImage(self.theme.images.play, for: .normal)
+        self.playButton.alpha = layout.playButtonAlpha()
 
-        let image = UIImage(named: "play.pdf", in: Bundle(for: Dash.self), compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
-
-        self.pauseButton.setBackgroundImage(image, for: .normal)
         self.pauseButton.tintColor = self.theme.colors.foreground
+        self.pauseButton.setBackgroundImage(self.theme.images.pause, for: .normal)
+        self.pauseButton.alpha = layout.pauseButtonAlpha()
 
         self.backgroundView.backgroundColor = self.theme.colors.background
+
+        self.titleLabel.text = "The podcast track title"
+        self.titleLabel.frame = layout.titleLabelFrame()
+        self.titleLabel.textColor = self.theme.colors.foreground
+        self.titleLabel.font = UIFont.systemFont(ofSize: layout.titleLabelFontSize())
 
     }
 
     func styleSubviews() {
-        // TODO: Move
+        // TODO: Move expensive non-layout here (eg. images)
     }
 
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {

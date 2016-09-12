@@ -15,7 +15,6 @@ class PlayerThemeTests: XCTestCase {
         let _ = PlayerTheme()
 
         let _ = PlayerTheme(colors: .standard)
-        let _ = PlayerTheme(colors: .grayscale)
         let _ = PlayerTheme(colors: .init(foreground: .green, background: .white))
 
         let _ = PlayerTheme(alignment: .standard)

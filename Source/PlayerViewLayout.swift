@@ -21,6 +21,8 @@ struct PlayerViewLayout {
 
     func workingFrame() -> CGRect {
 
+        // TODO: Calculate working frame upfront, not every time needed
+
         let width = self.state.maximised ? self.bounds.size.width : self.theme.size.rawValue
         let height = self.theme.size.rawValue
         let y: CGFloat
@@ -41,6 +43,45 @@ struct PlayerViewLayout {
 
     }
 
+    func leftButtonFrame() -> CGRect {
+
+        var frame = self.workingFrame()
+        frame.size.width = self.theme.size.rawValue
+
+        if self.state.maximised == false && self.theme.alignment.horizontal == .maxXEdge {
+            frame.origin.x = self.bounds.width - self.theme.size.rawValue
+        }
+
+        return frame.insetBy(dx: self.theme.style.padding, dy: self.theme.style.padding)
+
+    }
+
+    func rightButtonFrame() -> CGRect {
+
+        var frame = self.workingFrame()
+        frame.size.width = self.theme.size.rawValue
+        frame.origin.x = self.bounds.width - self.theme.size.rawValue
+
+        if self.state.maximised == false && self.theme.alignment.horizontal == .minXEdge {
+            frame.origin.x = 0
+        }
+
+        return frame.insetBy(dx: self.theme.style.padding, dy: self.theme.style.padding)
+
+    }
+
+    func centralFrame() -> CGRect {
+        return self.workingFrame().insetBy(dx: self.theme.size.rawValue - self.theme.style.padding, dy: self.theme.style.padding)
+    }
+
+    func primaryButtonFrame() -> CGRect {
+        return self.theme.alignment.horizontal == .minXEdge ? self.leftButtonFrame() : self.rightButtonFrame()
+    }
+
+    func secondaryButtonFrame() -> CGRect {
+        return self.theme.alignment.horizontal == .maxXEdge ? self.leftButtonFrame() : self.rightButtonFrame()
+    }
+
     func backgroundViewFrame() -> CGRect {
         let padding = self.theme.style.padding
         return self.workingFrame().insetBy(dx: padding, dy: padding)
@@ -51,16 +92,32 @@ struct PlayerViewLayout {
         return min(self.theme.style.rounding, maxPadding)
     }
 
+    func toggleButtonFrame() -> CGRect {
+        return self.primaryButtonFrame()
+    }
+
     func playButtonFrame() -> CGRect {
-        var frame = self.workingFrame()
-        frame.size.width = self.theme.size.rawValue
-        return frame.insetBy(dx: self.theme.style.padding, dy: self.theme.style.padding)
+        return self.secondaryButtonFrame()
+    }
+
+    func playButtonAlpha() -> CGFloat {
+        return (self.state.maximised && !self.state.playing) ? 1 : 0
     }
 
     func pauseButtonFrame() -> CGRect {
-        var frame = self.workingFrame()
-        frame.size.width = self.theme.size.rawValue
-        return frame.insetBy(dx: self.theme.style.padding, dy: self.theme.style.padding)
+        return self.secondaryButtonFrame()
+    }
+
+    func pauseButtonAlpha() -> CGFloat {
+        return (self.state.maximised && self.state.playing) ? 1 : 0
+    }
+
+    func titleLabelFrame() -> CGRect {
+        return self.centralFrame()
+    }
+
+    func titleLabelFontSize() -> CGFloat {
+        return (self.theme.size.rawValue / 2) - 5
     }
 
 }

@@ -54,21 +54,21 @@ public class Player {
 
     public func play() {
 
-        self.state.playing = false
         self.engine.play()
+        self.state.playing = true
         self.view.updateState(state: self.state)
 
     }
 
     public func pause() {
 
-        self.state.playing = false
         self.engine.pause()
+        self.state.playing = false
         self.view.updateState(state: self.state)
 
     }
 
-    func toggleMaximise() {
+    public func toggle() {
 
         if self.state.maximised {
             self.minimise()
@@ -104,19 +104,16 @@ extension Player: PlayerEngineDelegate {
 
 extension Player: PlayerViewDelegate {
 
+    func toggleButtonWasPressed() {
+        self.toggle()
+    }
+
     func playButtonWasPressed() {
-        print("play button was pressed")
         self.play()
     }
 
     func pauseButtonWasPressed() {
-        print("pause button was pressed")
         self.pause()
-    }
-
-    func maximiseToggleWasPressed() {
-        print("maximise toggle was pressed")
-        self.toggleMaximise()
     }
 
 }
