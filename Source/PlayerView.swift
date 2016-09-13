@@ -76,7 +76,7 @@ protocol PlayerViewDelegate: class {
 
     func updateTheme(theme: PlayerTheme) {
 
-        UIView.animate(withDuration: 0.4) {
+        UIView.animate(withDuration: 0.3) {
             self.theme = theme
             self.layoutSubviews()
         }
@@ -85,7 +85,7 @@ protocol PlayerViewDelegate: class {
 
     func updateState(state: PlayerState) {
 
-        UIView.animate(withDuration: 0.4) {
+        UIView.animate(withDuration: 0.3) {
             self.state = state
             self.layoutSubviews()
         }
