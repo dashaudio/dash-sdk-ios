@@ -12,39 +12,48 @@ class PlayerBackgroundView: UIView {
 
     override func action(for layer: CALayer, forKey event: String) -> CAAction? {
 
-
-        if event == "cornerRadius" {
-            if let boundsAnimation = layer.animation(forKey: "bounds.size") as? CABasicAnimation {
-                let animation = boundsAnimation.copy() as! CABasicAnimation
-                animation.keyPath = "cornerRadius"
-                let action = Action()
-                action.pendingAnimation = animation
-                action.priorCornerRadius = layer.cornerRadius
-                return action
-            }
+        if event != "cornerRadius" {
+            return super.action(for: layer, forKey: event)
         }
-        return super.action(for: layer, forKey: event)
 
+        guard let animation = layer.animation(forKey: "bounds.size") as? CABasicAnimation else {
+            return super.action(for: layer, forKey: event)
+        }
+
+        return Action(animation: animation.copy() as! CABasicAnimation, radius: layer.cornerRadius)
 
     }
 
     private class Action: NSObject, CAAction {
-        var pendingAnimation: CABasicAnimation?
-        var priorCornerRadius: CGFloat = 0
-//        public func run(forKey event: String, object anObject: Any, arguments dict: [AnyHashable : Any]?)
+
+        var animation: CABasicAnimation
+        var radius: CGFloat
+
+        init(animation: CABasicAnimation, radius: CGFloat) {
+            self.animation = animation
+            self.radius = radius
+        }
 
         func run(forKey event: String, object anObject: Any, arguments dict: [AnyHashable : Any]?) {
-            if let layer = anObject as? CALayer, let pendingAnimation = pendingAnimation {
-                if pendingAnimation.isAdditive {
-                    pendingAnimation.fromValue = priorCornerRadius - layer.cornerRadius
-                    pendingAnimation.toValue = 0
-                } else {
-                    pendingAnimation.fromValue = priorCornerRadius
-                    pendingAnimation.toValue = layer.cornerRadius
-                }
-                layer.add(pendingAnimation, forKey: "cornerRadius")
+
+            guard let layer = anObject as? CALayer else {
+                return
             }
+
+            if self.animation.isAdditive {
+                self.animation.fromValue = self.radius - layer.cornerRadius
+                self.animation.toValue = 0
+            } else {
+                self.animation.fromValue = radius
+                self.animation.toValue = layer.cornerRadius
+            }
+
+            self.animation.keyPath = "cornerRadius"
+
+            layer.add(animation, forKey: "cornerRadius")
+
         }
+
     }
 
 }
