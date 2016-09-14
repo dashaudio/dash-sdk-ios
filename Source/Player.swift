@@ -6,19 +6,10 @@
 //  Copyright © 2016 Dash. All rights reserved.
 //
 
-public protocol PlayerDelegate: class {
-
-    func themeDidChange(theme: PlayerTheme)
-    func stateDidChange(state: PlayerState)
-
-}
-
 public class Player {
 
-    private let view: PlayerView
-    private let engine: PlayerEngine
-
-    public weak var delegate: PlayerDelegate? // TODO
+    fileprivate let view: PlayerView
+    fileprivate let engine: PlayerEngine
 
     public var theme: PlayerTheme {
         didSet { self.view.updateTheme(theme: self.theme) }
@@ -35,6 +26,7 @@ public class Player {
         self.view = view
         self.theme = theme
         self.state = state
+
         self.engine.delegate = self
         self.view.delegate = self
 
@@ -57,19 +49,11 @@ public class Player {
     }
 
     public func play() {
-
         self.engine.play()
-        self.state.playing = true
-        self.view.updateState(state: self.state)
-
     }
 
     public func pause() {
-
         self.engine.pause()
-        self.state.playing = false
-        self.view.updateState(state: self.state)
-
     }
 
     public func toggle() {
@@ -107,7 +91,19 @@ public class Player {
 
 extension Player: PlayerEngineDelegate {
 
-    // TODO
+    func engineDidPlay(success: Bool) {
+
+        self.state.playing = success
+        self.view.updateState(state: self.state)
+
+    }
+
+    func engineDidPause(success: Bool) {
+
+        self.state.paused = success
+        self.view.updateState(state: self.state)
+
+    }
 
 }
 

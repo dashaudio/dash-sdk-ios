@@ -15,3 +15,22 @@ public struct PlayerState {
     public var title: String = "Not playing"
 
 }
+
+extension PlayerState {
+
+    var hidden: Bool {
+        get { return self.hidden == false }
+        set { self.hidden = newValue == false }
+    }
+
+    var minimised: Bool {
+        get { return self.maximised == false }
+        set { self.maximised = newValue == false }
+    }
+
+    var paused: Bool {
+        get { return self.playing == false }
+        set { self.playing = newValue == false }
+    }
+
+}
