@@ -73,6 +73,12 @@ public struct PlayerTheme {
 
     public struct Images {
 
+        /*
+         Some problems with this approach:
+         - who owns the UIImage instances?
+         - who knows if we're calling the constructor on the main thread?
+         */
+
         public var toggle: UIImage
         public var play: UIImage
         public var pause: UIImage

@@ -2,6 +2,12 @@
 
 Dash provides a smart audio player which turns your app's written content into podcasts.
 
+# Quick Start
+
+```swift
+Dash.sharedPlayer.present(over: view)
+Dash.sharedPlayer.present(over: viewController)
+```
 
 # Themes
     

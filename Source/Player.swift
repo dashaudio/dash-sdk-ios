@@ -52,6 +52,10 @@ public class Player {
 
     }
 
+    public func present(over viewController: UIViewController) {
+        self.present(over: viewController.view)
+    }
+
     public func play() {
 
         self.engine.play()

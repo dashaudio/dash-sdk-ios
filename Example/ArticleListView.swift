@@ -16,7 +16,7 @@ class ArticleListView: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Dash.sharedPlayer.present(over: self.navigationController?.view ?? self.view)
+        Dash.sharedPlayer.present(over: self.navigationController ?? self)
         Dash.sharedPlayer.minimise()
     }
 
