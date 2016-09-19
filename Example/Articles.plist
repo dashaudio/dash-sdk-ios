@@ -4,6 +4,20 @@
 <array>
 	<dict>
 		<key>title</key>
+		<string>Google’s DeepMind AI fakes some of the most realistic human voices yet.</string>
+		<key>body</key>
+		<string>Google’s DeepMind artificial intelligence has produced what could be some of the most realistic-sounding machine speech yet. WaveNet, as the system is called, generates voices by sampling real human speech and directly modeling audio waveforms based on it, as well as its previously generated audio. In Google’s tests, both English and Mandarin Chinese listeners found WaveNet more realistic than other types of text-to-speech programs, although it was less convincing than actual human speech. If that weren’t enough, it can also play the piano rather well.
+
+Text-to-speech programs are increasingly important for computing, as people begin to rely on bots and AI personal assistants like Apple’s Siri, Microsoft’s Cortana, Amazon’s Alexa, and the Google Assistant. If you ask Siri or Cortana a question, though, they’ll reply with actual recordings of a human voice, rearranged and combined in small pieces. This is called concatenative text to speech, and as one expert puts it, it’s a little like a ransom note. The results are often fairly realistic, but as Google writes, producing a new audio persona or tone of voice requires having an actor record every possible sound in a database.
+
+The alternative is parametric text to speech — building a completely computer-generated voice, using coded rules based on grammar or mouth sounds. Parametric voices don’t need source material to produce words. But the results, at least in English, are often stilted and robotic.
+Google’s system is still based on real voice input. But instead of chopping up recordings, it learns from them, then independently creates its own sounds in a variety of voices.
+Actually, that’s not quite right. On its own, WaveNet only knows a language’s sounds, not its content. Fire it up, and it produces pleasing yet mysterious nonsense, complete with human-like pauses and breath sounds. For meaningful speech, Google shapes the results with linguistic rules and suggestions.
+
+WaveNet isn’t going to be showing up in something like Google Assistant right now — its step-by-step processing system requires a comparatively huge amount of computing power. </string>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>Rocket League: how the game&apos;s overnight success was a decade in the making</string>
 		<key>body</key>
 		<string>Psyonix’s combination of football, motor racing and combat has attracted 20m players. Yet the online sports game’s surprise achievement is built on years of hard work

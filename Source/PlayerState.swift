@@ -11,8 +11,10 @@ public struct PlayerState {
     public var visible: Bool = true
     public var maximised: Bool = false
     public var playing: Bool = false
-    public var position: Double = 0
-    public var title: String = "Not playing"
+    public var position: Float = 0
+
+    public var title: String? = nil
+    public var body: String? = nil
 
 }
 

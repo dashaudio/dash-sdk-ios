@@ -13,12 +13,14 @@ protocol PlayerEngineDelegate: class {
 
     func engineDidPlay(success: Bool)
     func engineDidPause(success: Bool)
+    func engineDidProgress(position: Float)
     
 }
 
 class PlayerEngine {
 
-    weak var delegate: PlayerEngineDelegate?
+    weak var delegate: PlayerEngineDelegate? = nil
+    var player: AVAudioPlayer? = nil
 
     init() {
 
@@ -26,11 +28,19 @@ class PlayerEngine {
 
         self.enableAudioSession()
         self.enableRemoteControlEvents()
+        
+    }
+
+    func load(text: String) {
+
+        // let player = AVAudioPlayer(contentsOf: URL)
+        // self.player = player
 
     }
 
     func play() {
         self.delegate?.engineDidPlay(success: true)
+        self.delegate?.engineDidProgress(position: 0.2)
     }
 
     func pause() {
@@ -84,5 +94,5 @@ class PlayerEngine {
     func disableRemoteControlEvents() {
         // ?
     }
-    
+
 }

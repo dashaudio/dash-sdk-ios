@@ -28,6 +28,7 @@
 		37BF46531D8180CC00AE35DD /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3718D6ED1D7EC64500DC0041 /* ArticleListView.swift */; };
 		37BF46541D8180D000AE35DD /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3718D6F21D7EC84300DC0041 /* Article.swift */; };
 		37BF46561D81C14A00AE35DD /* PlayerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BF46551D81C14A00AE35DD /* PlayerBackgroundView.swift */; };
+		37C4F9971D90007800C013FD /* google-deepmind.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 37C4F9961D90007800C013FD /* google-deepmind.m4a */; };
 		37FFA1AD1D7EB82B0076B082 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FFA1AC1D7EB82B0076B082 /* AppDelegate.swift */; };
 		37FFA1B21D7EB82B0076B082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FFA1B01D7EB82B0076B082 /* Main.storyboard */; };
 		37FFA1B41D7EB82B0076B082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37FFA1B31D7EB82B0076B082 /* Assets.xcassets */; };
@@ -89,6 +90,7 @@
 		37BF46471D81713C00AE35DD /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		37BF464D1D817D2700AE35DD /* OptionsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsListView.swift; sourceTree = "<group>"; };
 		37BF46551D81C14A00AE35DD /* PlayerBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerBackgroundView.swift; sourceTree = "<group>"; };
+		37C4F9961D90007800C013FD /* google-deepmind.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "google-deepmind.m4a"; sourceTree = "<group>"; };
 		37FFA1AA1D7EB82B0076B082 /* DashExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DashExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FFA1AC1D7EB82B0076B082 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37FFA1B11D7EB82B0076B082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				377AE7081D7DD39500522AA7 /* Info.plist */,
 				3718D6F41D7EF40600DC0041 /* Dash.swift */,
 				37755A091D82BE1D00B16964 /* Icons.xcassets */,
+				37C4F9961D90007800C013FD /* google-deepmind.m4a */,
 				376737141D7F17E5003C26A8 /* Player */,
 				37BF464A1D8175EC00AE35DD /* Analytics */,
 			);
@@ -214,6 +217,7 @@
 				3718D6F21D7EC84300DC0041 /* Article.swift */,
 				3718D6ED1D7EC64500DC0041 /* ArticleListView.swift */,
 				3718D6EB1D7EC62F00DC0041 /* ArticleDetailView.swift */,
+				3718D6E71D7EC5B800DC0041 /* Articles.plist */,
 			);
 			name = Articles;
 			sourceTree = "<group>";
@@ -236,7 +240,6 @@
 				37FFA1B31D7EB82B0076B082 /* Assets.xcassets */,
 				37FFA1B51D7EB82B0076B082 /* LaunchScreen.storyboard */,
 				37FFA1B81D7EB82B0076B082 /* Info.plist */,
-				3718D6E71D7EC5B800DC0041 /* Articles.plist */,
 			);
 			name = DashExample;
 			path = Example;
@@ -381,6 +384,7 @@
 			files = (
 				37FFA1B71D7EB82B0076B082 /* LaunchScreen.storyboard in Resources */,
 				37FFA1B41D7EB82B0076B082 /* Assets.xcassets in Resources */,
+				37C4F9971D90007800C013FD /* google-deepmind.m4a in Resources */,
 				37FFA1B21D7EB82B0076B082 /* Main.storyboard in Resources */,
 				3718D6F11D7EC7D300DC0041 /* Articles.plist in Resources */,
 			);

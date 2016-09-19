@@ -42,7 +42,7 @@ class ArticleListView: UITableViewController {
         let article = self.articles[indexPath.row]
         self.selectedArticle = article
         self.performSegue(withIdentifier: "showArticleDetail", sender: self)
-        Dash.sharedPlayer.load(title: article.title)
+        Dash.sharedPlayer.load(title: article.title, body: article.body)
         Dash.sharedPlayer.maximise()
     }
 

@@ -19,6 +19,9 @@ protocol PlayerViewDelegate: class {
 
 @objc class PlayerView: UIView {
 
+    // TODO: Factor out presenter responsibility
+    // TODO: DI presenter and layout
+
     weak var delegate: PlayerViewDelegate?
 
     var theme = PlayerTheme()
@@ -74,7 +77,17 @@ protocol PlayerViewDelegate: class {
         fatalError("Not supported")
     }
 
-    func updateTheme(theme: PlayerTheme) {
+    func present(over view: UIView) {
+
+        self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.frame = view.bounds
+        self.layer.zPosition = CGFloat(FLT_MAX) // TODO: Some consideration here
+
+        view.addSubview(self)
+
+    }
+
+    func update(theme: PlayerTheme) {
 
         UIView.animate(withDuration: 0.3) {
             self.theme = theme
@@ -83,7 +96,7 @@ protocol PlayerViewDelegate: class {
 
     }
 
-    func updateState(state: PlayerState) {
+    func update(state: PlayerState) {
 
         UIView.animate(withDuration: 0.3) {
             self.state = state
@@ -124,7 +137,7 @@ protocol PlayerViewDelegate: class {
         self.titleLabel.alpha = layout.titleLabelAlpha()
 
         self.positionProgressView.frame = layout.positionProgressViewFrame()
-        self.positionProgressView.progress = 0.5
+        self.positionProgressView.progress = self.state.position
         self.positionProgressView.trackTintColor = self.theme.colors.background
         self.positionProgressView.progressTintColor = self.theme.colors.foreground
         self.positionProgressView.alpha = layout.positionProgressViewAlpha()
