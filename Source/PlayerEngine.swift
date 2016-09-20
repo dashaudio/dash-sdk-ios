@@ -13,14 +13,16 @@ protocol PlayerEngineDelegate: class {
 
     func engineDidPlay(success: Bool)
     func engineDidPause(success: Bool)
-    func engineDidProgress(position: Float)
+    func engineDidProgress(position: Double)
     
 }
 
 class PlayerEngine {
 
     weak var delegate: PlayerEngineDelegate? = nil
-    var player: AVAudioPlayer? = nil
+
+    var player: AVPlayer? = nil
+    var observer: Any? = nil
 
     init() {
 
@@ -31,20 +33,47 @@ class PlayerEngine {
         
     }
 
-    func load(text: String) {
+    func load(url: String) {
 
-        // let player = AVAudioPlayer(contentsOf: URL)
-        // self.player = player
+        self.pause()
+
+        let path = Bundle.main.path(forResource: url, ofType: nil)!
+        let player = AVPlayer(url: URL(fileURLWithPath: path))
+
+        self.player = player
+        self.delegate?.engineDidProgress(position: 0)
 
     }
 
     func play() {
-        self.delegate?.engineDidPlay(success: true)
-        self.delegate?.engineDidProgress(position: 0.2)
+
+        guard let player = self.player else { return }
+        guard let duration = player.currentItem?.duration else { return }
+
+        let interval = CMTime(value: 1, timescale: 1)
+        let queue = DispatchQueue.main
+
+        self.observer = player.addPeriodicTimeObserver(forInterval: interval, queue: queue) { time in
+            self.delegate?.engineDidProgress(position: time.seconds / duration.seconds)
+        }
+
+        player.play()
+        self.delegate?.engineDidPlay(success: true) // TODO: Check player.status
+
     }
 
     func pause() {
-        self.delegate?.engineDidPause(success: true)
+
+        guard let player = self.player else { return }
+
+        player.pause()
+        self.delegate?.engineDidPause(success: true) // TODO: Check player.status
+
+        if let observer = self.observer {
+            player.removeTimeObserver(observer)
+            self.observer = nil
+        }
+
     }
 
     func enableAudioSession() {

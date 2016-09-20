@@ -137,8 +137,8 @@ protocol PlayerViewDelegate: class {
         self.titleLabel.alpha = layout.titleLabelAlpha()
 
         self.positionProgressView.frame = layout.positionProgressViewFrame()
-        self.positionProgressView.progress = self.state.position
-        self.positionProgressView.trackTintColor = self.theme.colors.background
+        self.positionProgressView.setProgress(Float(self.state.position), animated: true)
+        self.positionProgressView.trackTintColor = self.theme.colors.foreground.withAlphaComponent(0.1)
         self.positionProgressView.progressTintColor = self.theme.colors.foreground
         self.positionProgressView.alpha = layout.positionProgressViewAlpha()
 

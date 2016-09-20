@@ -60,10 +60,10 @@ public class Player {
         self.state.maximised = true
     }
 
-    public func load(title: String, body: String) {
+    public func load(title: String, body: String, url: String) {
         self.state.title = title
         self.state.body = body
-        self.engine.load(text: body)
+        self.engine.load(url: url)
     }
 
     public func clear() {
@@ -83,7 +83,7 @@ extension Player: PlayerEngineDelegate {
         self.state.paused = success
     }
 
-    func engineDidProgress(position: Float) {
+    func engineDidProgress(position: Double) {
         self.state.position = position
     }
 

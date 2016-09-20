@@ -15,15 +15,66 @@ class ArticleDetailView: UIViewController, ArticleAttachable {
     var article: Article?
 
     override func viewWillAppear(_ animated: Bool) {
+
         super.viewWillAppear(animated)
-        self.textView.text = self.article?.body
+
+        NotificationCenter.default.addObserver(self,
+            selector: #selector(self.sizeCategoryDidChange),
+            name: NSNotification.Name.UIContentSizeCategoryDidChange,
+            object: nil)
+
+        self.updateText()
+
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+
+    }
+
+    func updateText() {
+
+        guard let article = self.article else {
+            self.textView.text = nil
+            return
+        }
+
         self.textView.textContainerInset = self.textContainerInset()
         self.textView.layoutIfNeeded()
         self.textView.contentOffset = CGPoint.zero
+
+        let text = NSMutableAttributedString()
+
+        text.append(NSAttributedString(string: article.title, attributes: [
+            NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline).withSize(28)]))
+
+        text.append(NSAttributedString(string: "\n\n"))
+
+        text.append(NSAttributedString(string: article.author, attributes: [
+            NSFontAttributeName: UIFont.preferredFont(forTextStyle: .caption1)]))
+
+        text.append(NSAttributedString(string: "\n"))
+
+        text.append(NSAttributedString(string: article.date, attributes: [
+            NSFontAttributeName: UIFont.preferredFont(forTextStyle: .caption2)]))
+
+        text.append(NSAttributedString(string: "\n\n"))
+
+        text.append(NSAttributedString(string: article.body, attributes: [
+            NSFontAttributeName: UIFont.preferredFont(forTextStyle: .body)]))
+
+        self.textView.attributedText = text
+
     }
 
     func textContainerInset() -> UIEdgeInsets {
         return UIEdgeInsets(top: 15, left: 10, bottom: Dash.sharedPlayer.theme.size.rawValue + 10, right: 10)
     }
-    
+
+    func sizeCategoryDidChange() {
+        self.updateText()
+    }
+
 }

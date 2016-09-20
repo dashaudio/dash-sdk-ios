@@ -29,7 +29,7 @@ class ArticleListView: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section == 0 ? "Articles" : nil
+        return section == 0 ? "Examples" : nil
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,7 +42,7 @@ class ArticleListView: UITableViewController {
         let article = self.articles[indexPath.row]
         self.selectedArticle = article
         self.performSegue(withIdentifier: "showArticleDetail", sender: self)
-        Dash.sharedPlayer.load(title: article.title, body: article.body)
+        Dash.sharedPlayer.load(title: article.title, body: article.body, url: article.url)
         Dash.sharedPlayer.maximise()
     }
 

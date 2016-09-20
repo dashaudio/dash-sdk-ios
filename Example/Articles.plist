@@ -4,7 +4,35 @@
 <array>
 	<dict>
 		<key>title</key>
+		<string>Fintech will ‘change the nature of money’</string>
+		<key>author</key>
+		<string>Tom Knowles</string>
+		<key>date</key>
+		<string>June 18th 2016, 12:01am</string>
+		<key>body</key>
+		<string>Financial technology companies will change the nature of money, shake the foundations of central banking and “deliver nothing less than a democratic revolution for all who use financial services”, according to the governor of the Bank of England.
+
+Mark Carney has said that the Bank will establish a unit to work with financial technology companies to find new ways to tackle problems faced by central bankers, such as cyberdefence and how to use data more effectively.
+
+The Bank hopes to encourage innovation in financial technology, or “fintech”, by working with tech-focused financial companies that are designing cybersecurity programmes and new payment systems.
+
+Mr Carney was due to announce the fintech accelerator in his annual speech at Mansion House on Thursday. However, after the death of Jo Cox, Mr Carney did not deliver the scheduled speech and instead paid tribute to the MP, describing her as a “remarkable person [who] dedicated her life to helping others”.
+
+Fintech companies have sprung up mostly since the financial crisis as distrust among traditional lenders and out-of-worker bankers looking for a new challenge led to innovative online businesses that aimed to solve some of the problems in finance.
+
+Such ideas have attracted the attention of the Bank of England as it looks to adapt to changing habits around using money. Mr Carney said that consumers wanted payments to be completed seamlessly within seconds while governments wanted to be able to process larger and more complex bulk payments across multiple currencies and countries. He added: “Fintech should neither be the Wild West nor strangled at birth. The Bank is devoting considerable resources to ensure whatever develops is sustainable, not ephemeral.”
+
+Andrew Hauser, executive director for banking, payments, and financial resilience at the Bank of England, said in April that central banks needed to embrace new technology. “The change is going to happen whether we like it or not,” he said. “We have to ensure we adapt as well. If we don’t do so, effectively we might not be able to do our jobs. Central banks, just like everyone else, can’t afford to be Uber’d.”</string>
+		<key>url</key>
+		<string>fintech.m4a</string>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>Google’s DeepMind AI fakes some of the most realistic human voices yet.</string>
+		<key>author</key>
+		<string>Adi Robertson</string>
+		<key>date</key>
+		<string>September 9th 2016, 10:44am</string>
 		<key>body</key>
 		<string>Google’s DeepMind artificial intelligence has produced what could be some of the most realistic-sounding machine speech yet. WaveNet, as the system is called, generates voices by sampling real human speech and directly modeling audio waveforms based on it, as well as its previously generated audio. In Google’s tests, both English and Mandarin Chinese listeners found WaveNet more realistic than other types of text-to-speech programs, although it was less convincing than actual human speech. If that weren’t enough, it can also play the piano rather well.
 
@@ -15,169 +43,27 @@ Google’s system is still based on real voice input. But instead of chopping up
 Actually, that’s not quite right. On its own, WaveNet only knows a language’s sounds, not its content. Fire it up, and it produces pleasing yet mysterious nonsense, complete with human-like pauses and breath sounds. For meaningful speech, Google shapes the results with linguistic rules and suggestions.
 
 WaveNet isn’t going to be showing up in something like Google Assistant right now — its step-by-step processing system requires a comparatively huge amount of computing power. </string>
+		<key>url</key>
+		<string>google-deepmind.m4a</string>
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Rocket League: how the game&apos;s overnight success was a decade in the making</string>
+		<string>First-time buyers face even tougher challenge</string>
+		<key>author</key>
+		<string>Harry Wilson</string>
+		<key>date</key>
+		<string>September 19th 2016, 12:01am</string>
 		<key>body</key>
-		<string>Psyonix’s combination of football, motor racing and combat has attracted 20m players. Yet the online sports game’s surprise achievement is built on years of hard work
-
-What a Save!” The words echo long after the desperate lunge that sent a wide shot into the top corner of the stadium. Rocket League: light of so many lives, killer of free time. This beautiful video game seems, like everything that appears perfect, to have arrived fully-formed.
-
-While some things take time to appreciate, Rocket League hits you like a boosted dumper truck. Developed by San Diego-based studio Psyonix, it is a game that hooks within seconds and, hundreds of hours later, keeps getting better. Imagine football played by blisteringly fast, flight-capable cars and you’re pretty much there. Since release, the game has attracted over 20 million players, and has just seen its first world cup tournament – over 20,000 people took part. But behind the overnight success lie several false starts and, to channel Alan Hansen, a decade of grit and determination.
-
-Psyonix founder Dave Hagewood, now CEO and Studio Director, got his break in the early 2000s as a modder – a fan who creates new levels and graphics for established games like Doom and Half-Life. Hagewood, though, worked on mods for Unreal, a sci-fi first-person shooter series famed for its spectacular visuals. It was a vital learning experience, and it got him his break into the industry.
-
-“I ended up adding vehicle support to Unreal Tournament 2003,” he says. “Epic Games had done some initial code for vehicles, so I took it from there and built a game mode. They wanted it to be a part of UT 2004, and I said I’d actually like to come and work on it in their offices. I worked there for about two years, almost as if I was an employee, and built the UT Onslaught mode.”
-
-Onslaught was a vehicle-heavy multiplayer deathmatch mode, which let players drive into online combat in a variety of tanks and armoured jeeps. It was a huge hit with fans – big enough to give Hagewood the confidence to set up on his own. “I left and started Psyonix,” he says. “I hired guys from the local college scene and started an internship program. I couldn’t hire industry people, I couldn’t afford to pay them, and they wouldn’t work for a no-name company anyway.”
-
-In 2005, Hagewood became certain that Epic’s powerful Unreal Engine 3 – a game development technology that the company licensed out to other studios – would become popular across the industry. Few outside of Epic itself knew its ins and outs like he did, so he started training his staff to use the application. He was right: UE3 became a staple engine, employed in hundreds of games. “We built the company on that engine, doing contract work for other studios,” he says. “Our goal was always to make our own products, but we kind of bootstrapped it to this work-for-hire. We always had some small part of us working on something original, though, because I had seen at Epic that the real key is owning your own IP.”
-
-The team focused its creativity around the successful Onslaught concept, developing a basic idea of cars that could jump and boost, initially tied to more direct combat. “I would liken it to a mix between something like Twisted Metal and Smash Bros,” says Jeremy Dunham, Psyonix’s Vice President. “You were on an open platform and the goal was to knock other cars to their death, but the boost would allow you to get back.” Various power-ups added to the game’s complexity, but everything changed when a ball was thrown in.
-
-“We thought let’s put a ball in there and it might lead to a side mode or something in the game we were making,” says Hagewood. “[A]nd we couldn’t stop playing it. We got obsessed, we were having trouble getting people to work on the game instead of just playing it.”
-
-The result was Rocket League’s predecessor, which would end up with the unfortunate title of Supersonic Acrobatic Rocket-Powered Battle Cars (Battle Cars for short). Released on Playstation 3 in 2008, the multiplayer mode was basically Rocket League, but the emphasis was on a superfluous single-player mode and the media wasn’t interested. It attracted a small community of passionate players, but it never broke through.
-
-Psyonix was convinced, however, that it had something special and began working on a follow-up. The initial concepts for Battle Cars 2 went in some unusual directions, such as an open-world where players would drive into stadiums to play. “We were trying to identify what we needed to do to make it work better this time,” says Hagewood. “We quickly realised some ideas were out of scope or maybe a little crazy, so eventually steered back and said look: we don’t want to change the game that we felt was so successful. Let’s polish what we have, keep that core, and just build the best experience on top of playing that game.”
-
-This meant renewed focus on things like online infrastructure, which was totally reworked from Battle Cars. It meant throwing out all the single-player obstacle courses and mini-games in favour of a season mode that taught new players the ropes. Above all it meant putting multiplayer front and centre, alongside a vibrant and chunky visual style. “At that same back-to-basics meeting where we decided to focus on what we knew was good,” says Corey Davis, Psyonix’s Design Director, “we also decided to embrace the spirit of the game which is maybe a little goofy – it’s cars hitting soccer balls, right? We tacked fully into hats and vibrant colours, and made it into something we would enjoy seeing. We didn’t worry too much about the seriousness of it.”
-
-For Rocket League, Psyonix dialled up the humour, but slowed the pace to make the game more accessible. Photograph: Psyonix
-Perhaps the most important change was to the pace – Rocket League is slower than Battle Cars. “The main change is how hard you hit the ball,” says Davis. “We had always played the game a little bit differently internally to what Battle Cars evolved into online. It became almost like pool where the good players got so good and could hit the ball so hard from anywhere on the field they could score from the opposite corner.
-
-“We never quite reached that level of mastery and, almost by accident, that had made our play more team-based and we wanted that feeling in Rocket League: more emphasis on team-play and also more accessible for all skill levels. One of the downsides of Battle Cars is if you’re not very good, you will probably never touch the ball if someone better than you is playing. That can happen a tiny bit with Rocket League, but so much less so.”
-
-What is easy to gloss over is that this process of refinement took place over seven years of development, while Psyonix did work-for-hire to pay the bills. This turned out to be a key factor in Rocket League’s exceptional level of polish, which is comparable to a great Nintendo game. “All our experience with other AAA companies doing contract work allowed us to train our team on hitting that really high bar,” says Dunham. “We worked with Firaxis on XCOM, with Epic on Gears of War, many other studios, and we got to see what their processes and standards of quality were. So when it came time to remake our own game, we had the tools, expertise and new standards to hit that bar.”
-
-All of this time, the team size remained small. “Before release I don’t think we ever had more than 15 people on it,” says Hagewood. “That was the absolute max, and most of the time it was far less than that.”
-
-The Rocket League community has embraced the game’s humour and spirit. Photograph: Psynoix
-Following alpha and beta periods, Rocket League launched in July 2015 on PC and PS4 – the latter as part of Sony’s PS+ service, meaning it was available free for a month. This was a controversial gamble internally, but Psyonix made the call that jump-starting the console playerbase would lead to greater things. For the thousands of players who discovered it in this way, Rocket League came from nowhere and was an instant smash.
-
-Player numbers were so high at launch that the servers crashed. “I realised it was a huge success when we didn’t go home for days,” laughs Davis. “We were really worried because we knew this could affect people’s perception and we had to fix it and get on top of it, but what turned that around is people liked it so much they were actually very supportive, unlike a lot of other game launches that run into similar issues. Then I realised the community was really behind it and we had to do whatever we could to keep them happy.”
-
-Psyonix had almost seamlessly transitioned from a small studio doing contract work into one supporting its own online behemoth. The post-launch strategy splits along simple lines: players pay upfront for the game and receive all content updates for free, but certain cosmetic items (such as the Back to the Future DeLorean) can be bought.
-
-“The key to keeping a community happy is giving them regular and constant reasons to be happy,” says Hagewood. “We were never big on doing what many games do which is sell absolutely everything post-release, particularly maps, because that’s the kind of thing that divides your audience every time you release them. So we let the community stay involved in everything we update, while we also release things for sale that are optional and allow players to express themselves.”
-
-Ultimately, the player numbers show Psyonix is doing something right. In industry terminology Rocket League is a ‘sticky’ game, which means that it is played regularly by a lot of people. Vitally for the YouTube gaming generation, it lends itself well to short videos of amazing goals or saves, quickly shared around social media or gaming networks. This, alongside the game’s high design quality, means the usual rules for video game popularity and sales (a few weeks of intense action followed by months of managed decline) don’t apply. The recent Rocket League Championship Series, a professionally-produced tournament with gorgeously-skilled players, only emphasised the game’s potential as an eSport – not least in the fact it’s so instantly readable, unlike many currently-popular eSports.
-
-Rocket League is an ongoing word-of-mouth success and, as it ages, it is acquiring players faster than ever before: 20 million players is the most recent number. Psyonix makes a point of updating on the millions, and Dunham says to expect another announcement “in the next couple of weeks”.
-
-WHile its success may seem effortless, Rocket League represents at least a decade of investment and learning on the part of Psyonix. Call it what you will – a vision the studio believed in, persistence paying off, or simply a victory for great design and refinement. “The success has made us a Rocket League studio, at least for the moment” says Hageman. “We have made the decision that Rocket League deserves to be a live game. It’s not even that we want it to be a live game, it just is a live game – that’s why we’re doing all the updates and continuing to support it.”
-
-However, even though most of the studio now works on its flagship title, Hagewood still remembers the lesson he learned at Epic: to keep innovating on popular concepts. Hence, a small team at Psyonix keeps working on whatever’s next.
-
-So does this still feel like the small studio that first started working on weird vehicle combat games? “We had to scale,” Hageman says, “otherwise we couldn’t keep it – it would’ve collapsed under its own weight. But we’re being very critical about that and we’re trying to be innovative, this is a real opportunity, because we have the funding to construct this studio in a way where we’re not just a victim of whatever circumstances come about. We can actually say, this is how the ideal studio should be. So let’s build that. It’s exciting and scary, but a really cool time.”</string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>Super Nintendo and me: growing up, recession and role-playing adventures</string>
-		<key>body</key>
-		<string>Game developer Rebekah Saltsman could never get near a console when her brothers were around – then the Snes arrived
-
-I don’t remember a time we didn’t have video games in the house.
-
-I grew up in Gregory, Michigan, a small town in the middle of nowhere; a town that literally borders Hell. That’s Hell, Michigan. I wish I was kidding. My dad was a second shift supervisor at a General Motors plant in Detroit. He always wanted to have the latest expensive things; we owned an early home PC and he’d bring home these floppy discs filled with games – they would trade them around at his office. My mom worked as a secretary and later a substitute teacher and a city postal carrier – she learned how to program at college. She made sure we all had access to the computer, even though my sister and I were super little and there were six of us fighting to use it.
-
-We owned an Atari when I was a toddler and a Nintendo Entertainment System by the time I was six. I had four older brothers – the eldest a decade older than me – so I didn’t get to touch the consoles much. But that all changed when we got a Super Nintendo Entertainment System in 1992.
-
-We were given it for Christmas right before my 11th birthday. By that time, my two oldest brothers had moved out and then the third brother got a summer job. This left me in the position of second player to my youngest brother. The Snes was purchased for him (of all the girls I was friends with in late elementary and early middle school, none of them had a console in the house unless they also had a brother) but this time, by default, it was for me too.
-
-I was at the right age for it. Born in 1981, I fell through the cracks of the big generational distinctions. I am not Gen X, I am not a millennial. I am the Goonies and Sixteen Candles and The Breakfast Club and The Gremlins and Back to the Future. I grew up with a rotary phone, a VCR, the very first CD player, the first DVD player. My introduction to the internet was in a physical science class in 1994, trying to send an email to a university about some chemistry term. This was the era of Telnet and dial-up. It was the tipping point into the digital age.
-
-The Snes sat right in that weird middle ground between the past and the future. It couldn’t easily handle 3D graphics like later consoles, but the pixel art worlds envisaged at the time contained the same sprawling stories and immersive experiences that modern games are built around.
-
-We’d never before had so much control over a story as we did in on that console with its grand role-playing adventures. We’d played simple arcade games on the Atari, but they were generally too hard for younger kids; the games on the Nes were nearly impossible for us too. But by the time the Snes came along, we were old enough and confident enough to go all in – and we could experience them with our friends. The games finally had proper save functions too, allowing us to store progress without having to write down a special code, which was how it worked with the Nes (and it wasn’t easy for a kid who could barely write).
-
-So in the summer of 1993, my brother, sister and I saved up every cent of our raspberry-picking money to buy Secret of Mana, the new role-playing game from Squaresoft, creator of the legendary Final Fantasy series. It was, like, $60, which was a fortune for a bunch of kids at the time. I remember opening the package after setting up the Snes on the “big TV” in the family room, which was usually forbidden by my parents. We studied the game manual together and then we started our epic journey. My brother played as the Mana Sword hero and I played as Purim, a young girl determined to rescue her boyfriend Dyluck from a witch, and Gnome, a powerful earth spirit.
-
-We spent every second we could playing that game. We played it until we beat it, and then we started again. It was the first time we had ever been sucked into a world that took us far away from our own. If we’d had access to the early online fan fiction community (where people wrote and shared their own stories based around games, movies and TV shows) or if there had been something like Pottermore for Secret of Mana – we would have spent the rest of our waking hours interacting there. We had never seen anything like this game; we cared about the characters, they were real people to us, and we needed to bring stability and peace to their sad world.
-
-It feels weird to describe this simple, pixelated landscape in the same way someone would describe a hyper realistic endlessly exploratory game environment from today. But in 1993, this place, where I fought monsters in real time with my brother, where we got to save a world while flying on a dragon – it was like I was really there and my actions mattered. When Dyluck was taken by the witch, when the town of Pandora was struck mute, even when I had to save Santa – which is REALLY a thing in the game – everything mattered.
-
-What was going on culturally and historically in the years before this? The Berlin wall came down. The first Gulf War had just ended. I grew up with nuclear bomb drills, the red scare, the end of the cold war. My parents lived through the recession in the 1980s … and then here was the VERY FIRST real digital escapism for children where they were in control of a world that needed saving. Secret of Mana and the games like it were products of the culture we lived in. They were a mirror to the joy and terror we experienced as we grew older. There are parallels to the types of media kids are gravitating toward today – video games fill a need for us all.
-
-With their elaborate stories, multi-gendered characters, astonishing musical scores, and countless hours of gameplay, the Super Nintendo role-playing games certainly reflected a need in me. I was a 12-year-old girl from the Midwest, feeling, but not understanding, the effects of the auto industry collapsing in Detroit, the economic uncertainty of my parents and friends’ parents, the shrinking of the world through satellite TV and globalisation. Yet with Secret of Mana, I had this one place where I was in control.
-
-Even now, many years later, I feel all of these things when I turn on that game. I am transported back to the summer of 1993, when I got to know my brother and sister so well. The world feels just as real, even though I am looking at it through adult eyes – eyes that have witnessed the first school shootings, the homegrown terrorist attacks in Oklahoma City, the bombings and destruction of the World Trade Center, the wars that claimed the lives of kids I grew up with, the illness and death of friends and family.
-
-My brother, sister and I still play Secret of Mana together when we are all in one place. It is much harder now that we are parents ourselves, living at opposite ends of the country. Our current playthrough has taken years instead of a few hours – 10 years to be exact. But we will complete it.
-
-And that story – about a child who must save the world with nothing but his sword and his friends – still speaks to the kid inside of me.</string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>Cats v dogs: which animal owns the internet?</string>
-		<key>body</key>
-		<string>From Lolcats to keyboard cat, have the grumpy, complicated and just plain weird felines lost ground to their cute, friendly canine sworn enemies?
-
-Somewhere in the history of the internet, cats became its rulers.
-
-Simultaneously aloof, amusing and a bit weird, cats seemed the natural choice as the web’s unofficial mascot. From Lolcats to keyboard cat, our feline friends were quickly everywhere. But as the internet has aged and changed, another animal has gained ground. Could the cat finally be dethroned, and at the paws of its sworn enemy no less? Is the dawn of the dog upon us?
-
-Now don’t get me wrong, cats on the internet, at least Western, English-speaking internet, are still very much a thing. Grumpy Cat’s still going strong and Maru the cat’s still being watched climbing into boxes. But dogs are increasingly the subject of memes and weird internet obsessions. They are very much on the cats’ territory.
-
-Take Doge – the quizzical-looking shiba inu. It was such a successful meme, even the BBC’s flagship highbrow radio news programme, Today, had an entire item dedicated to “the grammar of Doge”.
-
-More recently, a slew of popular Twitter accounts dedicated to posting only pictures or videos of dogs, every day, have cropped up. One of the best, We Rate Dogs, does just what it says on the tin.
-
-In the age of “relatable” internet – where everything is tagged with the caption “me IRL” or “same” – goofy dogs appear more in tune with the internet’s psyche than too-cool-for-you cats.
-
-And, in the same way as LolCats had their own dialect, which shaped some early online communications, so too do the internet’s dog enthusiasts. Dogs become “doggo”, “floofs” and “puppers” and they “bork” rather than bark.
-
-Weighing up the popularity of dogs v cats on the internet is more of an art than a science, so I spoke to some experts.
-
-Enter Jason Eppink. Last year, he curated How Cats Took Over the Internet at New York’s Museum of the Moving Image. He documented the online feline’s history, from LolCats to Keyboard Cat, sifting through posts on various platforms. Here’s the thing: he found, in terms of posts correctly tagged “cats” or “dogs”, the numbers are actually fairly close. On four of the five platforms he looked at, it was pretty much equal between the two. Tumblr was the only place where cats outnumbered dogs, 3:1.
-
-If that’s the case, how did cats become synonymous with the internet in the first place?
-
-He says: “In the West at least, cat ownership has been looked down on. We have this really pejorative term ‘crazy cat lady’, which is also gendered.
-
-“We don’t have a term for that about people who own dogs.
-
-“I read a lot and heard a lot from people who felt shamed about their passion for their cat and have said that this attention and this ability to be passionate about their pet online has allowed them to be more vocal about it.”
-
-‘I can has cheezburger?’ – the original Lolcat. Photograph: http://icanhas.cheezburger.com/
-In 2014, BuzzFeed’s Jack Shepherd described the internet as a “virtual cat park” when asking why content related to cats seems to gain so much traction online (he conceded animal writers such as himself may have helped perpetuate the cat hype). If anyone knows which animal curries the internet’s favour, it’s Tumblr’s Amanda Brennan. She has become known as the Meme Librarian for her work at the microblogging company and at Know Your Meme. For her, the virtual cat park theory definitely has merit. “Cat content does dominate because you get to see inside these people’s homes,” she says. “If you want to see weird things dogs do, you just walk outside.”
-
-Since the days of I Can Haz Cheezburger around a decade ago, there have been two big changes. One: the rise of autoplaying video; two: the age of the smartphone.
-
-“You take your dog outside, of course you’re going to have your phone with you. You’re going to want to catch that great moment of your dog doing something cool,” she says.
-
-While there are, of course, great cat videos, Brennan believes dogs are just so much better suited to video. “I do believe that video is the tipping point. Cats are so weird - their personalities tend to come across better in still images.
-
-“My default idea of a dog is something that’s super hyper, jumping around and very excited. A cat is like laying around and doing weird things.
-
-“To experience the dog, sometimes you need the video.”
-
-There’s another theory. When people decided cats = the internet, it was a very different place. It was much smaller, for starters. It wasn’t mainstreamed in the way it is today.
-
-Back in 2011, games and culture writer Leigh Alexander wrote a piece called “Why the internet chose cats” where she argued dogs weren’t as widely celebrated on the image boards where memes often spring from.
-
-Five years on, things are very different. Nowadays, the internet’s a lot more mainstream.
-
-“I never thought Facebook would become the home of the most cutting edge memes while underground image boards became nerdy and tired,” says Alexander.
-
-“I think the rise of the dog – friendly, warm, human’s best friend, who people can love earnestly and sincerely and without fear of being made fun of for the sentiment – is a good representation of the mainstreaming of the internet.”
-
-Dogs on Facebook are truly having a moment. There’s an enthusiastic community called Dogspotting, with strict rules and even its own mock court for the rulebreakers. Elsewhere, the Facebook page of a sanctuary for old dogs in Tennessee gained a lot of attention earlier this year for being generally delightful.
-
-Alexander says: “Back when I was growing up online, everything had to be weird, gross, uncomfortable or indirect, because only people who were uncomfortable with normal social stuff were on the internet.
-
-“Cute, furry, smiley things belonged to the real world. But now the internet is the real world, and dogs are as beloved online as they are anywhere!”
-
-Then again, cats have the upper hand of a long-association with the internet, which could be hard to shake.
-
-“Cats = the internet is always going to be around,” says Brennan. “It’s kind of how meme culture started.
-
-“Doge gave us a different kind of language, but without lolcats, we never would have had Doge.”
-
-So there we have it. The next time you assume the internet belongs to cats, maybe think again.
-
-Or perhaps all this talk of cats and dogs is very 2015 and actually that era is gone. Maybe the internet truly belongs to gorillas now.</string>
+		<string>The property market has continued to recover since the Brexit vote, with prices rising this month amid renewed warnings about the difficulties facing first-time buyers trying to get a foot on the housing ladder.
+Figures from Rightmove, the property website, show that average asking prices have hit £306,499 in September, a rise of 0.7 per cent month-on-month and up 4 per cent compared with the same time last year.
+The rise was particularly acute among the smaller properties most attractive to new buyers, where prices rose 3.3 per cent this month to £194,477, an annual increase of 10.5 per cent.
+New buyers are now being asked to pay nearly £20,000 more than they were a year ago to get the keys to their first home, raising fears about more people being excluded from the property market.
+Miles Shipside, principal housing market analyst at Rightmove, said that first-time buyers were finding it increasingly hard to find an affordable property, with factors such as the rise in stamp duty on buy-to-let earlier in the year contributing to an initial glut in sales ahead of the changes, followed by a dearth of suitable homes
+“This rising tide of prices is marooning more and more first-time buyers, outstripping their ability to meet stricter lending criteria and afford the required deposits and monthly payments,” Mr Shipside said.
+Among “second-steppers” looking to move on from their first home, asking prices rose at a slightly below average 0.5 per cent this month, or 5.2 per cent year-on-year, to £258,836.
+Brian Murphy, head of lending at Mortgage Advice Bureau, said that while homes were more expensive post-the Brexit vote, low interest rates meant that mortgages were cheaper than ever. “For those looking to get on the ladder or trade up, whilst prices have increased there are a number of record low product rates available at the moment, with lenders very much ‘open for business’ and many repricing downwards or offering more flexible lending criteria in an effort to win new customers,” Mr Murphy said.</string>
+		<key>url</key>
+		<string>first-time-buyers.m4a</string>
 	</dict>
 </array>
 </plist>
