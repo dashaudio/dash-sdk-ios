@@ -17,20 +17,25 @@ protocol PlayerEngineDelegate: class {
     
 }
 
-class PlayerEngine {
+class PlayerEngine: NSObject {
 
     weak var delegate: PlayerEngineDelegate? = nil
 
     var player: AVPlayer? = nil
-    var observer: Any? = nil
+    var playWhenReady = false
 
-    init() {
+    var observer: Any? = nil
+    var observerContext: Any? = nil
+
+    override init() {
+
+        super.init()
 
         // TODO: Carefully consider a shorter lifetime for session and event handling
 
         self.enableAudioSession()
         self.enableRemoteControlEvents()
-        
+
     }
 
     func load(url: String) {
@@ -39,6 +44,9 @@ class PlayerEngine {
 
         let path = Bundle.main.path(forResource: url, ofType: nil)!
         let player = AVPlayer(url: URL(fileURLWithPath: path))
+
+        self.player?.currentItem!.removeObserver(self, forKeyPath: #keyPath(AVPlayerItem.status))
+        player.currentItem!.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.new], context: nil)
 
         self.player = player
         self.delegate?.engineDidProgress(position: 0)
@@ -49,6 +57,11 @@ class PlayerEngine {
 
         guard let player = self.player else { return }
         guard let duration = player.currentItem?.duration else { return }
+
+        if player.status != .readyToPlay {
+            self.playWhenReady = true
+            return
+        }
 
         let interval = CMTime(value: 1, timescale: 1)
         let queue = DispatchQueue.main
@@ -122,6 +135,26 @@ class PlayerEngine {
 
     func disableRemoteControlEvents() {
         // ?
+    }
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+
+        let status = AVPlayerStatus(rawValue: change![NSKeyValueChangeKey.newKey] as! Int)!
+
+        switch status {
+
+        case .unknown: ()
+
+        case .readyToPlay:
+            if self.playWhenReady {
+                self.playWhenReady = false
+                self.play()
+            }
+
+        case .failed: ()
+
+        }
+
     }
 
 }

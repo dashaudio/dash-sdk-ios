@@ -71,6 +71,10 @@ public class Player {
         self.state.body = nil
     }
 
+    public var playing: Bool {
+        return self.state.playing
+    }
+
 }
 
 extension Player: PlayerEngineDelegate {

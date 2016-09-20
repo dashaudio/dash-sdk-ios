@@ -15,9 +15,12 @@ class ArticleListView: UITableViewController {
     private var selectedArticle: Article? = nil
 
     override func viewWillAppear(_ animated: Bool) {
+
         super.viewWillAppear(animated)
+
         Dash.sharedPlayer.present(over: self.navigationController ?? self)
         Dash.sharedPlayer.minimise()
+
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,23 +36,35 @@ class ArticleListView: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "articleCell", for: indexPath)
-        cell.textLabel?.text = self.articles[indexPath.row].title
+        cell.textLabel?.text = "📰 " + self.articles[indexPath.row].title
+
         return cell
+
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         let article = self.articles[indexPath.row]
+
         self.selectedArticle = article
         self.performSegue(withIdentifier: "showArticleDetail", sender: self)
-        Dash.sharedPlayer.load(title: article.title, body: article.body, url: article.url)
+
+        if Dash.sharedPlayer.playing == false {
+            Dash.sharedPlayer.load(title: article.title, body: article.body, url: article.url)
+        }
+        
         Dash.sharedPlayer.maximise()
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
         if var receiver = segue.destination as? ArticleAttachable {
             receiver.article = self.selectedArticle
         }
+
     }
     
 }

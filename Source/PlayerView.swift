@@ -130,7 +130,7 @@ protocol PlayerViewDelegate: class {
 
         self.backgroundView.backgroundColor = self.theme.colors.background
 
-        self.titleLabel.text = self.state.title
+        self.titleLabel.text = self.state.title ?? "Not playing"
         self.titleLabelContainer.frame = layout.titleLabelFrame()
         self.titleLabel.textColor = self.theme.colors.foreground
         self.titleLabel.font = UIFont.boldSystemFont(ofSize: layout.titleLabelFontSize())

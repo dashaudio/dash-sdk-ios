@@ -40,7 +40,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Dash SDK" id="cc7-Ni-9uh">
-                        <barButtonItem key="rightBarButtonItem" title="Options" id="Oo9-EO-rPk">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="Oo9-EO-rPk">
                             <connections>
                                 <segue destination="uzM-f8-l6X" kind="presentation" id="1Vi-zk-5L0"/>
                             </connections>
@@ -437,4 +437,7 @@
             <point key="canvasLocation" x="311" y="-361"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="22" height="22"/>
+    </resources>
 </document>

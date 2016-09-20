@@ -14,6 +14,13 @@ class ArticleDetailView: UIViewController, ArticleAttachable {
     @IBOutlet weak var textView: UITextView!
     var article: Article?
 
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+        self.textView.delegate = self
+
+    }
+
     override func viewWillAppear(_ animated: Bool) {
 
         super.viewWillAppear(animated)
@@ -62,6 +69,14 @@ class ArticleDetailView: UIViewController, ArticleAttachable {
 
         text.append(NSAttributedString(string: "\n\n"))
 
+
+        text.append(NSAttributedString(string: "🎧 Listen", attributes: [
+            NSFontAttributeName: UIFont.preferredFont(forTextStyle: .caption1),
+            NSLinkAttributeName: "http://apple.com"
+        ]))
+
+        text.append(NSAttributedString(string: "\n\n"))
+
         text.append(NSAttributedString(string: article.body, attributes: [
             NSFontAttributeName: UIFont.preferredFont(forTextStyle: .body)]))
 
@@ -75,6 +90,21 @@ class ArticleDetailView: UIViewController, ArticleAttachable {
 
     func sizeCategoryDidChange() {
         self.updateText()
+    }
+
+}
+
+extension ArticleDetailView: UITextViewDelegate {
+
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+
+        if let article = self.article {
+            Dash.sharedPlayer.load(title: article.title, body: article.body, url: article.url)
+            Dash.sharedPlayer.play()
+        }
+
+        return false
+
     }
 
 }
