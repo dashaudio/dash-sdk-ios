@@ -8,27 +8,27 @@
 
 public class Player {
 
-    fileprivate let view: PlayerView
-    fileprivate let engine: PlayerEngine
-
-    public var theme: PlayerTheme {
-        didSet { self.view.update(theme: self.theme) }
-    }
+    private let view: PlayerView
+    private let engine: PlayerEngine
 
     fileprivate var state: PlayerState {
         didSet { self.view.update(state: self.state) }
     }
 
-    init(engine: PlayerEngine = PlayerEngine(), view: PlayerView = PlayerView(),
+    public var theme: PlayerTheme {
+        didSet { self.view.update(theme: self.theme) }
+    }
+
+    init(view: PlayerView = PlayerView(), engine: PlayerEngine = PlayerEngine(),
          state: PlayerState = PlayerState(), theme: PlayerTheme = PlayerTheme()) {
 
-        self.engine = engine
         self.view = view
+        self.engine = engine
         self.state = state
         self.theme = theme
 
-        self.engine.delegate = self
         self.view.delegate = self
+        self.engine.delegate = self
 
     }
 
@@ -60,15 +60,13 @@ public class Player {
         self.state.maximised = true
     }
 
-    public func load(title: String, body: String, url: String) {
+    public func load(url: String, title: String) {
         self.state.title = title
-        self.state.body = body
         self.engine.load(url: url)
     }
 
     public func clear() {
         self.state.title = nil
-        self.state.body = nil
     }
 
     public var playing: Bool {

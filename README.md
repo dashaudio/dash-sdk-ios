@@ -2,36 +2,56 @@
 
 Dash provides a smart audio player which turns your app's written content into podcasts.
 
-# Quick Start
+## Introduction
+
+The fastest way to get started is to use the *shared player*, a singleton provided for your convenience.
+
+### Show the player
 
 ```swift
-Dash.sharedPlayer.present(over: view)
-Dash.sharedPlayer.present(over: viewController)
+Dash.shared.player.present(over: myView)
+Dash.shared.player.present(over: myViewController)
 ```
 
-# Themes
-    
+### Load an article
+
 ```swift
-let standardTheme = PlayerTheme()
-
-let standardColors = PlayerTheme(colors: .standard)
-let grayscaleColors = PlayerTheme(colors: .grayscale)
-let customColors = PlayerTheme(colors: .init(foreground: .green, background: .white))
-
-let standardAlignment = PlayerTheme(alignment: .standard)
-let customAlignment = PlayerTheme(alignment: .init(horizontal: .maxXEdge, vertical: .minYEdge))
-
-let standardSize = PlayerTheme(size: .standard)
-let smallSize = PlayerTheme(size: .small)
-let largeSize = PlayerTheme(size: .large)
-
-let standardStyle = PlayerTheme(style: .standard)
-let customStyle = PlayerTheme(style: .init(rounding: 5, padding: 5))
-
-let standardImages = PlayerTheme(images: .standard)
-let customImages = PlayerTheme(images: .init(play: UIImage(named:"play")!, pause: UIImage(named: "pause")!))
-
-let customTheme = PlayerTheme(colours: .grayscale, size: .large, style: .init(rounding: 10, padding: 10))
-
-Dash.sharedPlayer.theme = customTheme
+Dash.shared.player.load(url: myArticleUrl)
+Dash.shared.player.clear()
 ```
+
+### Play a loaded article
+
+```swift
+Dash.shared.player.play()
+Dash.shared.player.pause()
+```
+
+### Minimise the player
+
+```swift
+Dash.shared.player.minimise()
+Dash.shared.player.maximise()
+Dash.shared.player.toggle()
+```
+
+### Style the player
+
+```swift
+Dash.shared.player.theme.colors.foreground = UIColor.blue
+Dash.shared.player.theme.alignment.horizontal = .maxXEdge
+Dash.shared.player.theme.size = .large
+Dash.shared.player.theme.style.padding = 8
+Dash.shared.player.theme.images.play = UIImage(named: "play")
+```
+
+## Advanced
+
+TODO
+
+- Create and configure player instance manually
+- Create multiple players
+- Use DI to switch out player’s view or engine
+- Implement player's delegate
+- Provide custom views
+- Full theme listing

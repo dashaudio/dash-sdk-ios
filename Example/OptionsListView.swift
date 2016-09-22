@@ -32,8 +32,8 @@ class OptionsListView: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Dash.sharedPlayer.present(over: self.navigationController ?? self)
-        Dash.sharedPlayer.maximise()
+        Dash.shared.player.present(over: self.navigationController ?? self)
+        Dash.shared.player.maximise()
         self.update()
     }
 
@@ -43,7 +43,7 @@ class OptionsListView: UITableViewController {
 
     func update() {
 
-        let theme = Dash.sharedPlayer.theme
+        let theme = Dash.shared.player.theme
 
         self.verticalAlignmentTopCell.checked = theme.alignment.vertical == .minYEdge
         self.verticalAlignmentBottomCell.checked = theme.alignment.vertical == .maxYEdge
@@ -74,8 +74,8 @@ class OptionsListView: UITableViewController {
 
         switch stepper {
 
-        case self.styleRoundingStepper: Dash.sharedPlayer.theme.style.rounding = CGFloat(stepper.value)
-        case self.stylePaddingStepper: Dash.sharedPlayer.theme.style.padding = CGFloat(stepper.value)
+        case self.styleRoundingStepper: Dash.shared.player.theme.style.rounding = CGFloat(stepper.value)
+        case self.stylePaddingStepper: Dash.shared.player.theme.style.padding = CGFloat(stepper.value)
 
         default: break
 
@@ -91,8 +91,8 @@ class OptionsListView: UITableViewController {
 
         switch slider {
 
-        case self.colorForegroundSlider: Dash.sharedPlayer.theme.colors.foreground = color
-        case self.colorBackgroundSlider: Dash.sharedPlayer.theme.colors.background = color
+        case self.colorForegroundSlider: Dash.shared.player.theme.colors.foreground = color
+        case self.colorBackgroundSlider: Dash.shared.player.theme.colors.background = color
 
         default: break
 
@@ -106,15 +106,15 @@ class OptionsListView: UITableViewController {
 
         switch cell {
 
-        case self.verticalAlignmentTopCell: Dash.sharedPlayer.theme.alignment.vertical = .minYEdge
-        case self.verticalAlignmentBottomCell: Dash.sharedPlayer.theme.alignment.vertical = .maxYEdge
+        case self.verticalAlignmentTopCell: Dash.shared.player.theme.alignment.vertical = .minYEdge
+        case self.verticalAlignmentBottomCell: Dash.shared.player.theme.alignment.vertical = .maxYEdge
 
-        case self.horizontalAlignmentLeftCell: Dash.sharedPlayer.theme.alignment.horizontal = .minXEdge
-        case self.horizontalAlignmentRightCell: Dash.sharedPlayer.theme.alignment.horizontal = .maxXEdge
+        case self.horizontalAlignmentLeftCell: Dash.shared.player.theme.alignment.horizontal = .minXEdge
+        case self.horizontalAlignmentRightCell: Dash.shared.player.theme.alignment.horizontal = .maxXEdge
 
-        case self.sizeSmallCell: Dash.sharedPlayer.theme.size = .small
-        case self.sizeMediumCell: Dash.sharedPlayer.theme.size = .medium
-        case self.sizeLargeCell: Dash.sharedPlayer.theme.size = .large
+        case self.sizeSmallCell: Dash.shared.player.theme.size = .small
+        case self.sizeMediumCell: Dash.shared.player.theme.size = .medium
+        case self.sizeLargeCell: Dash.shared.player.theme.size = .large
 
         default: break
 

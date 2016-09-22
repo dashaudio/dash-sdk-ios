@@ -85,7 +85,7 @@ class ArticleDetailView: UIViewController, ArticleAttachable {
     }
 
     func textContainerInset() -> UIEdgeInsets {
-        return UIEdgeInsets(top: 15, left: 10, bottom: Dash.sharedPlayer.theme.size.rawValue + 10, right: 10)
+        return UIEdgeInsets(top: 15, left: 10, bottom: Dash.shared.player.theme.size.rawValue + 10, right: 10)
     }
 
     func sizeCategoryDidChange() {
@@ -99,8 +99,8 @@ extension ArticleDetailView: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
 
         if let article = self.article {
-            Dash.sharedPlayer.load(title: article.title, body: article.body, url: article.url)
-            Dash.sharedPlayer.play()
+            Dash.shared.player.load(title: article.title, body: article.body, url: article.url)
+            Dash.shared.player.play()
         }
 
         return false

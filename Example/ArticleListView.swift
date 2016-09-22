@@ -18,8 +18,8 @@ class ArticleListView: UITableViewController {
 
         super.viewWillAppear(animated)
 
-        Dash.sharedPlayer.present(over: self.navigationController ?? self)
-        Dash.sharedPlayer.minimise()
+        Dash.shared.player.present(over: self.navigationController ?? self)
+        Dash.shared.player.minimise()
 
     }
 
@@ -51,11 +51,11 @@ class ArticleListView: UITableViewController {
         self.selectedArticle = article
         self.performSegue(withIdentifier: "showArticleDetail", sender: self)
 
-        if Dash.sharedPlayer.playing == false {
-            Dash.sharedPlayer.load(title: article.title, body: article.body, url: article.url)
+        if Dash.shared.player.playing == false {
+            Dash.shared.player.load(title: article.title, body: article.body, url: article.url)
         }
         
-        Dash.sharedPlayer.maximise()
+        Dash.shared.player.maximise()
 
     }
 

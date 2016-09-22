@@ -13,6 +13,7 @@
 		3749F2581D911B49007BA75E /* first-time-buyers.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3749F2551D911AF6007BA75E /* first-time-buyers.m4a */; };
 		376737161D7F17FD003C26A8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376737151D7F17FD003C26A8 /* PlayerView.swift */; };
 		376737181D7F1829003C26A8 /* PlayerViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376737171D7F1829003C26A8 /* PlayerViewLayout.swift */; };
+		377228771D93D7B800167B18 /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377228761D93D7B800167B18 /* PlayerTests.swift */; };
 		37755A0A1D82BE1D00B16964 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37755A091D82BE1D00B16964 /* Icons.xcassets */; };
 		377AE70E1D7DD39500522AA7 /* Dash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377AE7041D7DD39500522AA7 /* Dash.framework */; };
 		377AE7131D7DD39500522AA7 /* DashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377AE7121D7DD39500522AA7 /* DashTests.swift */; };
@@ -78,6 +79,7 @@
 		3749F2551D911AF6007BA75E /* first-time-buyers.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "first-time-buyers.m4a"; sourceTree = "<group>"; };
 		376737151D7F17FD003C26A8 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		376737171D7F1829003C26A8 /* PlayerViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewLayout.swift; sourceTree = "<group>"; };
+		377228761D93D7B800167B18 /* PlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 		37755A091D82BE1D00B16964 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		377AE7041D7DD39500522AA7 /* Dash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		377AE7071D7DD39500522AA7 /* Dash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dash.h; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				377AE7121D7DD39500522AA7 /* DashTests.swift */,
+				377228761D93D7B800167B18 /* PlayerTests.swift */,
 				37BF46451D816A6400AE35DD /* PlayerThemeTests.swift */,
 				377AE7141D7DD39500522AA7 /* Info.plist */,
 			);
@@ -422,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37BF46491D81719600AE35DD /* PlayerThemeTests.swift in Sources */,
+				377228771D93D7B800167B18 /* PlayerTests.swift in Sources */,
 				377AE7131D7DD39500522AA7 /* DashTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

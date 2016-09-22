@@ -14,7 +14,6 @@ public struct PlayerState {
     public var position: Double = 0
 
     public var title: String? = nil
-    public var body: String? = nil
 
 }
 

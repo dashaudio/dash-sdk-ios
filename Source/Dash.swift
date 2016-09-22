@@ -1,7 +1,9 @@
 public class Dash {
 
-    public static let sharedPlayer = Player()
-    public static let sharedanalytics = Analytics()
+    public static let shared = Dash()
+
+    public let player = Player()
+    public let analytics = Analytics()
 
     private init() {}
 
