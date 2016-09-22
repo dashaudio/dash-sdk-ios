@@ -6,6 +6,14 @@ Dash provides a smart audio player which turns your app's written content into p
 
 The fastest way to get started is to use the *shared player*, a singleton provided for your convenience.
 
+### Install the library
+
+Install via Cocoapods.
+
+```
+pod 'Dash', '~> 0.0.1'
+```
+
 ### Show the player
 
 ```swift
@@ -20,7 +28,7 @@ Dash.shared.player.load(url: myArticleUrl)
 Dash.shared.player.clear()
 ```
 
-### Play a loaded article
+### Play the article
 
 ```swift
 Dash.shared.player.play()
