@@ -40,16 +40,16 @@ class PlayerEngine: NSObject {
 
     func load(url: String) {
 
-        self.pause()
-
-        let path = Bundle.main.path(forResource: url, ofType: nil)!
-        let player = AVPlayer(url: URL(fileURLWithPath: path))
-
-        self.player?.currentItem!.removeObserver(self, forKeyPath: #keyPath(AVPlayerItem.status))
-        player.currentItem!.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.new], context: nil)
-
-        self.player = player
-        self.delegate?.engineDidProgress(position: 0)
+//        self.pause()
+//
+//        let path = Bundle.main.path(forResource: url, ofType: nil)!
+//        let player = AVPlayer(url: URL(fileURLWithPath: path))
+//
+//        self.player?.currentItem!.removeObserver(self, forKeyPath: #keyPath(AVPlayerItem.status))
+//        player.currentItem!.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.new], context: nil)
+//
+//        self.player = player
+//        self.delegate?.engineDidProgress(position: 0)
 
     }
 

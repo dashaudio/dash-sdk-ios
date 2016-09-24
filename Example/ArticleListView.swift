@@ -11,8 +11,16 @@ import Dash
 
 class ArticleListView: UITableViewController {
 
-    private let articles = Article.all()
+    private var articles: [Article] = []
     private var selectedArticle: Article? = nil
+    private let articleStore = ArticleStore()
+
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+        self.reload()
+
+    }
 
     override func viewWillAppear(_ animated: Bool) {
 
@@ -20,6 +28,34 @@ class ArticleListView: UITableViewController {
 
         Dash.shared.player.present(over: self.navigationController ?? self)
         Dash.shared.player.minimise()
+
+    }
+
+
+    func reload() {
+
+        self.articleStore.fetch { result in
+            DispatchQueue.main.async { self.update(result: result) }
+        }
+
+    }
+
+    func update(result: ArticleStore.Result) {
+
+        switch result {
+
+        case .progress:
+            self.navigationItem.prompt = "Loading articles..."
+
+        case .failure:
+            self.navigationItem.prompt = "Loading failed!"
+
+        case .success(let articles):
+            self.navigationItem.prompt = nil
+            self.articles = articles
+            self.tableView.reloadData()
+
+        }
 
     }
 
@@ -52,7 +88,7 @@ class ArticleListView: UITableViewController {
         self.performSegue(withIdentifier: "showArticleDetail", sender: self)
 
         if Dash.shared.player.playing == false {
-            Dash.shared.player.load(title: article.title, body: article.body, url: article.url)
+            Dash.shared.player.load(url: article.url, title: article.title)
         }
         
         Dash.shared.player.maximise()
@@ -65,6 +101,10 @@ class ArticleListView: UITableViewController {
             receiver.article = self.selectedArticle
         }
 
+    }
+
+    @IBAction func reloadButtonWasPressed() {
+        self.reload()
     }
     
 }

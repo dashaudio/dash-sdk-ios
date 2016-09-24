@@ -8,8 +8,6 @@ The fastest way to get started is to use the *shared player*, a singleton provid
 
 ### Install the library
 
-Install via Cocoapods.
-
 ```
 pod 'Dash', '~> 0.0.1'
 ```

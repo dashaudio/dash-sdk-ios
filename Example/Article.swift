@@ -15,6 +15,7 @@ struct Article {
     let date: String
     let body: String
     let url: String
+    let image: String
 
 }
 
@@ -28,29 +29,18 @@ extension Article {
 
         guard let title = dictionary["title"] else { return nil }
         guard let author = dictionary["author"] else { return nil }
-        guard let date = dictionary["date"] else { return nil }
-        guard let body = dictionary["body"] else { return nil }
+        guard let date = dictionary["publishedAt"] else { return nil }
+        guard let body = dictionary["description"] else { return nil }
         guard let url = dictionary["url"] else { return nil }
+        guard let image = dictionary["urlToImage"] else { return nil }
 
         self.title = title
         self.author = author
         self.date = date
         self.body = body
         self.url = url
+        self.image = image
 
     }
 
-    static func all() -> [Article] {
-
-        let filePath = Bundle.main.path(forResource: "Articles", ofType: "plist")!
-        let fileUrl = URL(fileURLWithPath: filePath)
-        let fileData = try! Data(contentsOf: fileUrl)
-
-        let articlesObject = try! PropertyListSerialization.propertyList(from: fileData, format: nil)
-        let articlesDictionary = articlesObject as! [[String:String]]
-
-        return articlesDictionary.flatMap { Article(dictionary: $0) }
-
-    }
-    
 }
