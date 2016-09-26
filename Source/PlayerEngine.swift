@@ -38,7 +38,7 @@ class PlayerEngine: NSObject {
 
     }
 
-    func load(url: String) {
+    func load(url: URL) {
 
 //        self.pause()
 //

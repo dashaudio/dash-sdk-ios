@@ -10,12 +10,14 @@ import Foundation
 
 struct Article {
 
+    let id: URL
+
     let title: String
     let author: String
     let date: String
     let body: String
-    let url: String
-    let image: String
+
+    let image: URL
 
 }
 
@@ -25,22 +27,31 @@ protocol ArticleAttachable {
 
 extension Article {
 
-    init?(dictionary: [String:String]) {
+    init?(dictionary: [String:Any]) {
 
-        guard let title = dictionary["title"] else { return nil }
-        guard let author = dictionary["author"] else { return nil }
-        guard let date = dictionary["publishedAt"] else { return nil }
-        guard let body = dictionary["description"] else { return nil }
-        guard let url = dictionary["url"] else { return nil }
-        guard let image = dictionary["urlToImage"] else { return nil }
+        guard let id = URL(string: dictionary["url"] as? String) else { return nil }
+        guard let title = dictionary["title"] as? String else { return nil }
+        guard let author = dictionary["author"] as? String else { return nil }
+        guard let date = dictionary["publishedAt"] as? String else { return nil }
+        guard let body = dictionary["description"] as? String else { return nil }
+        guard let image = URL(string: dictionary["urlToImage"] as? String) else { return nil }
 
+        self.id = id
         self.title = title
         self.author = author
         self.date = date
         self.body = body
-        self.url = url
         self.image = image
 
+    }
+
+}
+
+extension URL {
+
+    init?(string: String?) {
+        guard let string = string else { return nil }
+        self.init(string: string)
     }
 
 }

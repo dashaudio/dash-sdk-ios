@@ -89,18 +89,22 @@ protocol PlayerViewDelegate: class {
 
     func update(theme: PlayerTheme) {
 
-        UIView.animate(withDuration: 0.3) {
-            self.theme = theme
-            self.layoutSubviews()
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.3) {
+                self.theme = theme
+                self.layoutSubviews()
+            }
         }
 
     }
 
     func update(state: PlayerState) {
 
-        UIView.animate(withDuration: 0.3) {
-            self.state = state
-            self.layoutSubviews()
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.3) {
+                self.state = state
+                self.layoutSubviews()
+            }
         }
 
     }
@@ -130,7 +134,7 @@ protocol PlayerViewDelegate: class {
 
         self.backgroundView.backgroundColor = self.theme.colors.background
 
-        self.titleLabel.text = self.state.title ?? "Not playing"
+        self.titleLabel.text = self.state.label ?? "Not playing"
         self.titleLabelContainer.frame = layout.titleLabelFrame()
         self.titleLabel.textColor = self.theme.colors.foreground
         self.titleLabel.font = UIFont.boldSystemFont(ofSize: layout.titleLabelFontSize())
@@ -141,6 +145,8 @@ protocol PlayerViewDelegate: class {
         self.positionProgressView.trackTintColor = self.theme.colors.foreground.withAlphaComponent(0.1)
         self.positionProgressView.progressTintColor = self.theme.colors.foreground
         self.positionProgressView.alpha = layout.positionProgressViewAlpha()
+
+        self.backgroundColor = self.state.loading ? UIColor.red : UIColor.clear
 
     }
 

@@ -88,7 +88,7 @@ class ArticleListView: UITableViewController {
         self.performSegue(withIdentifier: "showArticleDetail", sender: self)
 
         if Dash.shared.player.playing == false {
-            Dash.shared.player.load(url: article.url, title: article.title)
+            Dash.shared.player.load(url: article.id)
         }
         
         Dash.shared.player.maximise()

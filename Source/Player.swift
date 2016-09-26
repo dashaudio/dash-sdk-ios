@@ -10,6 +10,7 @@ public class Player {
 
     private let view: PlayerView
     private let engine: PlayerEngine
+    private let store: ArticleStore
 
     fileprivate var state: PlayerState {
         didSet { self.view.update(state: self.state) }
@@ -19,16 +20,21 @@ public class Player {
         didSet { self.view.update(theme: self.theme) }
     }
 
-    init(view: PlayerView = PlayerView(), engine: PlayerEngine = PlayerEngine(),
-         state: PlayerState = PlayerState(), theme: PlayerTheme = PlayerTheme()) {
+    init(view: PlayerView = PlayerView(),
+         engine: PlayerEngine = PlayerEngine(),
+         store: ArticleStore = ArticleStore(),
+         state: PlayerState = PlayerState(),
+         theme: PlayerTheme = PlayerTheme()) {
 
         self.view = view
         self.engine = engine
+        self.store = store
         self.state = state
         self.theme = theme
 
         self.view.delegate = self
         self.engine.delegate = self
+        self.store.delegate = self
 
     }
 
@@ -60,17 +66,35 @@ public class Player {
         self.state.maximised = true
     }
 
-    public func load(url: String, title: String) {
-        self.state.title = title
-        self.engine.load(url: url)
+    public func load(url: URL) {
+        self.store.fetch(id: url)
+//        self.engine.load(url: url)
     }
 
     public func clear() {
-        self.state.title = nil
+        self.state.label = nil
     }
 
     public var playing: Bool {
         return self.state.playing
+    }
+
+}
+
+extension Player: ArticleStoreDelegate {
+
+    func fetchDidStart() {
+        self.state.loading = true
+    }
+
+    func fetchDidSucceed(article: Article) {
+        print(article)
+        self.state.loading = false
+    }
+
+    func fetchDidFail() {
+        print("failed")
+        self.state.loading = false
     }
 
 }

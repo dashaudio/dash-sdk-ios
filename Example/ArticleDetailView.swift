@@ -99,7 +99,7 @@ extension ArticleDetailView: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
 
         if let article = self.article {
-            Dash.shared.player.load(url: article.url, title: article.title)
+            Dash.shared.player.load(url: article.id)
             Dash.shared.player.play()
         }
 
