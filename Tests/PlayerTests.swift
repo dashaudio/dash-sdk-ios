@@ -16,13 +16,10 @@ class PlayerTests: XCTestCase {
         let myView = UIView()
         let myViewController = UIViewController()
 
-        // let myArticleUrl = "first-time-buyers"
-        // let myArticleTitle = "First Time Buyers"
-
         Dash.shared.player.present(over: myView)
         Dash.shared.player.present(over: myViewController)
 
-        // TODO Dash.shared.player.load(url: myArticleUrl, title: myArticleTitle)
+        // TODO Dash.shared.player.load(url: myArticleUrl)
         Dash.shared.player.clear()
 
         Dash.shared.player.play()

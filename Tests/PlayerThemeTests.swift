@@ -11,7 +11,8 @@ import XCTest
 
 class PlayerThemeTests: XCTestCase {
 
-    func testExample() {
+    func testInterface() {
+
         let _ = PlayerTheme()
 
         let _ = PlayerTheme(colors: .standard)
@@ -28,7 +29,9 @@ class PlayerThemeTests: XCTestCase {
         let _ = PlayerTheme(style: .init(rounding: 5, padding: 5))
 
         let _ = PlayerTheme(images: .standard)
+        
         // let _ = PlayerTheme(images: .init(play: UIImage(named:"play")!, pause: UIImage(named: "pause")!))
+
     }
 
 }
