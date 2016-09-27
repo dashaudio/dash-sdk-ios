@@ -100,7 +100,7 @@ extension ArticleDetailView: UITextViewDelegate {
 
         if let article = self.article {
             Dash.shared.player.load(url: article.id)
-            Dash.shared.player.play()
+            Dash.shared.player.play() // TODO: Needs some work
         }
 
         return false

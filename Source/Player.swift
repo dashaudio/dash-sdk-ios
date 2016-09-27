@@ -8,9 +8,9 @@
 
 public class Player {
 
-    private let view: PlayerView
-    private let engine: PlayerEngine
-    private let store: ArticleStore
+    fileprivate let view: PlayerView
+    fileprivate let engine: AudioEngine
+    fileprivate let store: ArticleStore
 
     fileprivate var state: PlayerState {
         didSet { self.view.update(state: self.state) }
@@ -21,7 +21,7 @@ public class Player {
     }
 
     init(view: PlayerView = PlayerView(),
-         engine: PlayerEngine = PlayerEngine(),
+         engine: AudioEngine = AudioEngine(),
          store: ArticleStore = ArticleStore(),
          state: PlayerState = PlayerState(),
          theme: PlayerTheme = PlayerTheme()) {
@@ -68,11 +68,11 @@ public class Player {
 
     public func load(url: URL) {
         self.store.fetch(id: url)
-//        self.engine.load(url: url)
+        // self.engine.load(url: url)
     }
 
     public func clear() {
-        self.state.label = nil
+        self.state.article = nil
     }
 
     public var playing: Bool {
@@ -85,31 +85,51 @@ extension Player: ArticleStoreDelegate {
 
     func fetchDidStart() {
         self.state.loading = true
+        self.state.article = nil
     }
 
     func fetchDidSucceed(article: Article) {
-        print(article)
-        self.state.loading = false
+        // self.state.loading = false
+        self.state.article = article
+        self.engine.load(url: article.audio)
     }
 
     func fetchDidFail() {
-        print("failed")
         self.state.loading = false
+        self.state.article = nil
     }
 
 }
 
-extension Player: PlayerEngineDelegate {
+extension Player: AudioEngineDelegate {
 
-    func engineDidPlay(success: Bool) {
-        self.state.playing = success
+    func loadDidStart() {
+        self.state.loading = true
     }
 
-    func engineDidPause(success: Bool) {
-        self.state.paused = success
+    func loadDidSucceed() {
+        self.state.loading = false
     }
 
-    func engineDidProgress(position: Double) {
+    func loadDidFail() {
+        self.state.loading = false
+        // self.state.error = true?
+    }
+
+    func playbackDidStart() {
+        self.state.playing = true
+    }
+
+    func playbackDidStop() {
+        self.state.playing = false
+    }
+
+    func playbackDidFail() {
+        self.state.playing = false
+        // self.state.error = true?
+    }
+
+    func playbackPositionDidChange(position: Double) {
         self.state.position = position
     }
 

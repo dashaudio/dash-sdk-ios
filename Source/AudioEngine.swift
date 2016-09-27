@@ -9,17 +9,23 @@
 import AVFoundation
 import MediaPlayer
 
-protocol PlayerEngineDelegate: class {
+protocol AudioEngineDelegate: class {
 
-    func engineDidPlay(success: Bool)
-    func engineDidPause(success: Bool)
-    func engineDidProgress(position: Double)
-    
+    func loadDidStart()
+    func loadDidSucceed()
+    func loadDidFail()
+
+    func playbackDidStart()
+    func playbackDidStop()
+    func playbackDidFail()
+
+    func playbackPositionDidChange(position: Double)
+
 }
 
-class PlayerEngine: NSObject {
+class AudioEngine: NSObject {
 
-    weak var delegate: PlayerEngineDelegate? = nil
+    weak var delegate: AudioEngineDelegate? = nil
 
     var player: AVPlayer? = nil
     var playWhenReady = false
@@ -40,16 +46,21 @@ class PlayerEngine: NSObject {
 
     func load(url: URL) {
 
-//        self.pause()
-//
-//        let path = Bundle.main.path(forResource: url, ofType: nil)!
-//        let player = AVPlayer(url: URL(fileURLWithPath: path))
-//
-//        self.player?.currentItem!.removeObserver(self, forKeyPath: #keyPath(AVPlayerItem.status))
-//        player.currentItem!.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.new], context: nil)
-//
-//        self.player = player
-//        self.delegate?.engineDidProgress(position: 0)
+        // TODO: Optimise out loading the same content twice
+        // TODO: More sophisticated caching
+        // TODO: Listen to playback ended event
+
+        self.pause()
+
+        self.delegate?.playbackPositionDidChange(position: 0)
+        self.delegate?.loadDidStart()
+
+        let player = AVPlayer(url: url)
+
+        self.player?.currentItem!.removeObserver(self, forKeyPath: #keyPath(AVPlayerItem.status))
+        player.currentItem!.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.new], context: nil)
+
+        self.player = player
 
     }
 
@@ -67,11 +78,11 @@ class PlayerEngine: NSObject {
         let queue = DispatchQueue.main
 
         self.observer = player.addPeriodicTimeObserver(forInterval: interval, queue: queue) { time in
-            self.delegate?.engineDidProgress(position: time.seconds / duration.seconds)
+            self.delegate?.playbackPositionDidChange(position: time.seconds / duration.seconds)
         }
 
         player.play()
-        self.delegate?.engineDidPlay(success: true) // TODO: Check player.status
+        self.delegate?.playbackDidStart()
 
     }
 
@@ -80,7 +91,7 @@ class PlayerEngine: NSObject {
         guard let player = self.player else { return }
 
         player.pause()
-        self.delegate?.engineDidPause(success: true) // TODO: Check player.status
+        self.delegate?.playbackDidStop() // TODO: Check player.status
 
         if let observer = self.observer {
             player.removeTimeObserver(observer)
@@ -143,15 +154,18 @@ class PlayerEngine: NSObject {
 
         switch status {
 
-        case .unknown: ()
+        case .unknown:
+            break
 
         case .readyToPlay:
+            self.delegate?.loadDidSucceed()
             if self.playWhenReady {
                 self.playWhenReady = false
                 self.play()
             }
 
-        case .failed: ()
+        case .failed:
+            self.delegate?.loadDidFail()
 
         }
 

@@ -34,6 +34,7 @@ protocol PlayerViewDelegate: class {
     let titleLabelContainer = UIView()
     let positionProgressView = UIProgressView()
     let backgroundView = PlayerBackgroundView()
+    let loadingIndicator = UIActivityIndicatorView()
 
     func toggleButtonWasPressed() {
         self.delegate?.toggleButtonWasPressed()
@@ -62,6 +63,7 @@ protocol PlayerViewDelegate: class {
         self.titleLabelContainer.addSubview(self.titleLabel)
         self.addSubview(self.positionProgressView)
         self.addSubview(self.toggleButton)
+        self.addSubview(self.loadingIndicator)
 
         self.toggleButton.addTarget(self, action: #selector(toggleButtonWasPressed), for: .touchUpInside)
         self.playButton.addTarget(self, action: #selector(playButtonWasTapped), for: .touchUpInside)
@@ -120,13 +122,16 @@ protocol PlayerViewDelegate: class {
         self.pauseButton.frame = layout.pauseButtonFrame()
         self.backgroundView.frame = layout.backgroundViewFrame()
         self.backgroundView.layer.cornerRadius = layout.backgroundViewRounding()
+        self.loadingIndicator.frame = layout.loadingIndicatorFrame()
 
         self.toggleButton.tintColor = self.theme.colors.foreground
         self.toggleButton.setBackgroundImage(self.theme.images.toggle, for: .normal)
+        self.toggleButton.alpha = layout.toggleButtonAlpha()
 
         self.playButton.tintColor = self.theme.colors.foreground
         self.playButton.setBackgroundImage(self.theme.images.play, for: .normal)
         self.playButton.alpha = layout.playButtonAlpha()
+        self.playButton.isEnabled = layout.playButtonEnabled()
 
         self.pauseButton.tintColor = self.theme.colors.foreground
         self.pauseButton.setBackgroundImage(self.theme.images.pause, for: .normal)
@@ -134,7 +139,7 @@ protocol PlayerViewDelegate: class {
 
         self.backgroundView.backgroundColor = self.theme.colors.background
 
-        self.titleLabel.text = self.state.label ?? "Not playing"
+        self.titleLabel.text = self.state.article?.title ?? (self.state.loading ? "Loading..." : "Ready")
         self.titleLabelContainer.frame = layout.titleLabelFrame()
         self.titleLabel.textColor = self.theme.colors.foreground
         self.titleLabel.font = UIFont.boldSystemFont(ofSize: layout.titleLabelFontSize())
@@ -146,7 +151,14 @@ protocol PlayerViewDelegate: class {
         self.positionProgressView.progressTintColor = self.theme.colors.foreground
         self.positionProgressView.alpha = layout.positionProgressViewAlpha()
 
-        self.backgroundColor = self.state.loading ? UIColor.red : UIColor.clear
+        self.loadingIndicator.tintColor = self.theme.colors.foreground
+        self.loadingIndicator.alpha = layout.loadingIndicatorAlpha()
+
+        if self.state.loading {
+            self.loadingIndicator.startAnimating()
+        } else {
+            self.loadingIndicator.stopAnimating()
+        }
 
     }
 

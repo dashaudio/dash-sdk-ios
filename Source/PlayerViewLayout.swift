@@ -108,12 +108,20 @@ struct PlayerViewLayout {
         return self.primaryButtonFrame()
     }
 
+    func toggleButtonAlpha() -> CGFloat {
+        return self.state.loading ? 0 : 1
+    }
+
     func playButtonFrame() -> CGRect {
         return self.secondaryButtonFrame()
     }
 
     func playButtonAlpha() -> CGFloat {
         return (self.state.maximised && !self.state.playing) ? 1 : 0
+    }
+
+    func playButtonEnabled() -> Bool {
+        return self.state.article != nil
     }
 
     func pauseButtonFrame() -> CGRect {
@@ -156,6 +164,14 @@ struct PlayerViewLayout {
 
     func positionProgressViewAlpha() -> CGFloat {
         return self.state.maximised ? 1 : 0
+    }
+
+    func loadingIndicatorFrame() -> CGRect {
+        return self.primaryButtonFrame()
+    }
+
+    func loadingIndicatorAlpha() -> CGFloat {
+        return self.state.loading ? 1 : 0
     }
 
 }

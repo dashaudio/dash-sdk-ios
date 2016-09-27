@@ -22,7 +22,7 @@
 		37859A9A1D87F703002C9E84 /* Dash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377AE7041D7DD39500522AA7 /* Dash.framework */; };
 		37859A9B1D87F703002C9E84 /* Dash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 377AE7041D7DD39500522AA7 /* Dash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		37BF463D1D8153DE00AE35DD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BF463C1D8153DE00AE35DD /* Player.swift */; };
-		37BF463F1D81540500AE35DD /* PlayerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BF463E1D81540500AE35DD /* PlayerEngine.swift */; };
+		37BF463F1D81540500AE35DD /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BF463E1D81540500AE35DD /* AudioEngine.swift */; };
 		37BF46411D81542A00AE35DD /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BF46401D81542A00AE35DD /* PlayerState.swift */; };
 		37BF46431D81545A00AE35DD /* PlayerTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BF46421D81545A00AE35DD /* PlayerTheme.swift */; };
 		37BF46481D81713C00AE35DD /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BF46471D81713C00AE35DD /* Analytics.swift */; };
@@ -89,7 +89,7 @@
 		377AE70D1D7DD39500522AA7 /* DashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		377AE7141D7DD39500522AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37BF463C1D8153DE00AE35DD /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		37BF463E1D81540500AE35DD /* PlayerEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerEngine.swift; sourceTree = "<group>"; };
+		37BF463E1D81540500AE35DD /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		37BF46401D81542A00AE35DD /* PlayerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerState.swift; sourceTree = "<group>"; };
 		37BF46421D81545A00AE35DD /* PlayerTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTheme.swift; sourceTree = "<group>"; };
 		37BF46441D81671800AE35DD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -164,7 +164,6 @@
 				37BF463C1D8153DE00AE35DD /* Player.swift */,
 				37BF46401D81542A00AE35DD /* PlayerState.swift */,
 				37BF46421D81545A00AE35DD /* PlayerTheme.swift */,
-				37BF464C1D81760300AE35DD /* Engine */,
 				37BF464B1D8175FA00AE35DD /* View */,
 			);
 			name = Player;
@@ -200,6 +199,7 @@
 				370A69001D995F190090DE39 /* Utilities.swift */,
 				37755A091D82BE1D00B16964 /* Icons.xcassets */,
 				376737141D7F17E5003C26A8 /* Player */,
+				37BF464C1D81760300AE35DD /* Audio */,
 				370A68FD1D9929730090DE39 /* Article */,
 				37BF464A1D8175EC00AE35DD /* Analytics */,
 			);
@@ -236,12 +236,12 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		37BF464C1D81760300AE35DD /* Engine */ = {
+		37BF464C1D81760300AE35DD /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				37BF463E1D81540500AE35DD /* PlayerEngine.swift */,
+				37BF463E1D81540500AE35DD /* AudioEngine.swift */,
 			);
-			name = Engine;
+			name = Audio;
 			sourceTree = "<group>";
 		};
 		37BF464F1D817D2A00AE35DD /* Articles */ = {
@@ -439,7 +439,7 @@
 				370A69031D9968160090DE39 /* Article.swift in Sources */,
 				37BF463D1D8153DE00AE35DD /* Player.swift in Sources */,
 				376737181D7F1829003C26A8 /* PlayerViewLayout.swift in Sources */,
-				37BF463F1D81540500AE35DD /* PlayerEngine.swift in Sources */,
+				37BF463F1D81540500AE35DD /* AudioEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

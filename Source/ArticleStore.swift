@@ -25,6 +25,8 @@ class ArticleStore {
 
     func fetch(id: URL) {
 
+        // TODO: Delay start callback for a short time and if fetch is fast never send it
+
         self.task?.cancel()
         self.delegate?.fetchDidStart()
 
